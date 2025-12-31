@@ -1,4 +1,4 @@
-baseURL = 'https://vubon-blog.github.io/'
+baseURL = 'https://vubon.github.io/vubon-notes/'
 languageCode = 'en-us'
 title = 'Vubon Notes'
 theme = 'typo'
