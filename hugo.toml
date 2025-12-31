@@ -1,0 +1,28 @@
+baseURL = 'https://vubon-blog.github.io/'
+languageCode = 'en-us'
+title = 'Vubon Notes'
+theme = 'typo'
+
+[pagination]
+	pagerSize = 5
+
+[params]
+	description = 'Engineering notes, tutorials, and experiments.'
+	paginationSize = 5
+
+	[[params.menu]]
+		name = 'home'
+		url = '/'
+
+	[[params.menu]]
+		name = 'blog'
+		url = '/posts/'
+
+[markup]
+	[markup.highlight]
+		style = 'dracula'
+		lineNos = true
+		noClasses = false
+
+	[markup.goldmark.renderer]
+		unsafe = true

@@ -1,0 +1,17 @@
+{{/* Shortcode: latest3
+   Renders the 3 most recent posts from the `posts` section.
+*/}}
+{{ $posts := first 3 (where .Site.RegularPages.ByDate.Reverse "Section" "posts") }}
+{{ if gt (len $posts) 0 }}
+<div class="latest-posts">
+  <h3>Latest Notes</h3>
+  <ul>
+  {{ range $posts }}
+    <li>
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      <small class="muted"> — {{ .Date.Format "Jan 2, 2006" }}</small>
+    </li>
+  {{ end }}
+  </ul>
+</div>
+{{ end }}
