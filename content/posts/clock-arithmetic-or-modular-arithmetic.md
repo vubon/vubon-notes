@@ -14,7 +14,7 @@ aliases:
   - '/clock-arithmetic-or-modular-arithmetic/'
 ---
 
-![Clock arithmetic diagram](/vubon-notes/images/slide_2.jpg)
+![Clock arithmetic diagram](/images/slide_2.jpg)
 
 image credit: slideplayer
 

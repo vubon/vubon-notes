@@ -29,7 +29,7 @@ aliases:
 </strong>Roy, a Pathao customer, orders food and pays using his credit card with the number 2222–3333–4444–5555. What happens behind the scenes? Take a closer look at the diagram for some insights.</p>
 
 <figure>
-<img src="/vubon-notes/images/Vubon-Card-Network.png" alt="Vubon Card Network diagram" width="710" height="442" />
+<img src="/images/Vubon-Card-Network.png" alt="Vubon Card Network diagram" width="710" height="442" />
 
 <p id="46c9" class="pw-post-body-paragraph ig ih hj ii b ij ik il im in io ip iq ir is it iu iv iw ix iy iz ja jb jc jd hc bi" data-selectable-paragraph="">Here’s how the payment process works:</p>
 

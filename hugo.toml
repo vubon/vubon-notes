@@ -1,4 +1,4 @@
-baseURL = 'https://vubon.github.io/vubon-notes/'
+baseURL = 'https://vubon.me/'
 languageCode = 'en-us'
 title = 'Vubon Notes'
 theme = 'typo'
@@ -16,11 +16,11 @@ theme = 'typo'
 
 	[[params.menu]]
 		name = 'home'
-		url = '/vubon-notes/'
+		url = '/'
 
 	[[params.menu]]
 		name = 'blog'
-		url = '/vubon-notes/posts/'
+		url = '/posts/'
 
 [markup]
 	[markup.highlight]

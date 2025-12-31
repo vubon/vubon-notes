@@ -12,7 +12,7 @@ aliases:
   - '/python-property/'
 ---
 
-![Property decorator diagram](/vubon-notes/images/property.png)
+![Property decorator diagram](/images/property.png)
 
 Hmm. I am thinking what is that? let's deep a dive with me. Before I start  I want to ask some questions myself.
 1. What is <code>@property</code> in Python?
