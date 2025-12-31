@@ -1,0 +1,67 @@
+{{ define "main" }}
+
+{{ .Content }}
+
+{{/* Intro summary section */}}
+
+{{ if or .Site.Params.homeIntroTitle .Site.Params.homeIntroContent }}
+<div class="intro">
+    {{ with .Site.Params.homeIntroTitle }}
+    <h1>{{ . }}</h1>
+    {{ end }}
+
+    {{ with .Site.Params.homeIntroContent }}
+    <p>{{ . | markdownify }}</p>
+    {{ end }}
+</div>
+{{ end }}
+
+{{/* Social Icons - Removed, now in header */}}
+
+{{/* Collection Section */}}
+
+{{ if .Site.Params.homeCollection }}
+
+<div class="list-container">
+    {{ with .Site.Params.homeCollectionTitle}}
+    <h1> {{ . }} </h1>
+    {{ end }}
+
+    {{ $pages := where site.RegularPages "Type" "in" .Site.Params.homeCollection }}
+    {{ $pages = $pages | first .Site.Params.homeCollectionLimit }}
+
+    {{ range $pages }}
+    <p>
+        <span class="date">{{ .Date | time.Format "2006-01-02" }}</span>
+        <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
+    </p>
+    {{ end }}
+
+</div>
+
+{{ end }}
+
+{{/* List Section */}}
+
+{{ if .Site.Params.homeList }}
+
+<div class="list-container">
+    {{ with .Site.Params.homeListTitle}}
+    <h1> {{ . }} </h1>
+    {{ end }}
+
+    {{ $pages := where site.RegularPages "Type" "in" .Site.Params.homeList }}
+    {{ $pages = $pages | first .Site.Params.homeListLimit }}
+
+    {{ range $pages }}
+    <p>
+        <span class="date">{{ .Date | time.Format "2006-01-02" }}</span>
+        <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
+    </p>
+    {{ end }}
+
+</div>
+
+{{ end }}
+
+{{ end }}

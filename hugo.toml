@@ -14,6 +14,17 @@ theme = 'typo'
 	description = 'Engineering notes, tutorials, and experiments.'
 	paginationSize = 5
 
+    [params.breadcrumbs]
+      enabled = false
+
+	[[params.social]]
+		name = 'github'
+		url = 'https://github.com/vubon'
+
+    [[params.social]]
+        name = 'email'
+        url = 'mailto:vubon.roy@gmail.com'
+
 	[[params.menu]]
 		name = 'home'
 		url = '/'
@@ -25,7 +36,7 @@ theme = 'typo'
 [markup]
 	[markup.highlight]
 		style = 'dracula'
-		lineNos = true
+		lineNos = false
 		noClasses = false
 
 	[markup.goldmark.renderer]
