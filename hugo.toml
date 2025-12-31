@@ -3,6 +3,10 @@ languageCode = 'en-us'
 title = 'Vubon Notes'
 theme = 'typo'
 
+[outputs]
+	home = ['HTML']
+	section = ['HTML']
+
 [pagination]
 	pagerSize = 5
 
