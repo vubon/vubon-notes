@@ -13,7 +13,7 @@ aliases:
 
 [The time difference is from my Core-i3 machine; it may vary on yours.]
 
-![Function vs symbol benchmark](/images/function_vs_symbol.png)
+![Function vs symbol benchmark](/vubon-notes/images/function_vs_symbol.png)
 
 ```python
 # Example 1
