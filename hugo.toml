@@ -4,8 +4,8 @@ title = 'Vubon Notes'
 theme = 'typo'
 
 [outputs]
-	home = ['HTML']
-	section = ['HTML']
+	home = ['HTML', 'RSS', 'SITEMAP', 'ROBOTS']
+	section = ['HTML', 'RSS']
 
 [pagination]
 	pagerSize = 5

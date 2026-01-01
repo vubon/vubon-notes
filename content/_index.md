@@ -1,6 +1,6 @@
 ---
-title: "About Vubon Roy"
-description: "Mathematics grad, software engineer, always learning."
+title: "Vubon Notes - Vubon Roy's Engineering Blog"
+description: "Vubon Notes is the personal blog of Vubon Roy, sharing engineering notes, tutorials, and experiments in technology, coding, Python, DevOps, Hugo, and more. Find practical guides and insights from Vubon."
 date: 2025-12-30
 lastmod: 2025-12-30
 ---
