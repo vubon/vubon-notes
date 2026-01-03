@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Blog on Vubon Notes</title><link>https://vubon.me/posts/</link><description>Recent content in Blog on Vubon Notes</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sat, 03 Jan 2026 12:00:00 +0000</lastBuildDate><atom:link href="https://vubon.me/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>SOLID Principles with Python Examples</title><link>https://vubon.me/posts/solid-principles-with-python-examples/</link><pubDate>Sat, 03 Jan 2026 12:00:00 +0000</pubDate><guid>https://vubon.me/posts/solid-principles-with-python-examples/</guid><description>&lt;p>
+
+
+
+
+&lt;figure class="">
+ 
+ 
+ &lt;div class="img-container">
+ &lt;img loading="lazy" alt="SOLID Principles Diagram" src="https://vubon.me/images/solid-principles.png">
+ &lt;/div>
+ 
+
+ 
+&lt;/figure>
+&lt;/p>
+&lt;p>Let’s deep dive into SOLID principles. SOLID is a short form. It stands for&lt;/p>
+&lt;blockquote>
+&lt;ol>
+&lt;li>Single Responsibility Principle&lt;/li>
+&lt;li>Open and Closed Principle&lt;/li>
+&lt;li>Lisvok Sub situation Principle&lt;/li>
+&lt;li>Interface Segregation Principle&lt;/li>
+&lt;li>Dependency Inversion Principle&lt;/li>
+&lt;/ol>
+&lt;/blockquote>
+&lt;p>This is the meaning of the SOLID. In this article, I’m going to try to explain SOLID Principles in the simplest way so that it’s easy for beginners to understand.&lt;/p>
+&lt;p>The SOLID principles were defined in the early 2000s by &lt;a href="https://en.wikipedia.org/wiki/Robert_C._Martin">Robert C. Martin&lt;/a> (Uncle Bob). Uncle Bob elaborated some of these and identified others already existing and said that these principles should be used to get good management of dependencies in our code.&lt;/p></description></item><item><title>Fan-Out Fan-In in Golang — The easy way</title><link>https://vubon.me/posts/fan-out-fan-in-in-golang/</link><pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate><guid>https://vubon.me/posts/fan-out-fan-in-in-golang/</guid><description>&lt;p>These days, low latency isn’t “nice to have” — it’s table stakes. So let’s talk about the Fan-Out/Fan-In pattern and why it’s my go-to for faster APIs and background work. After 6+ years building FinTech systems, I’ll share a real example that makes the concept easy to digest and hard to forget. You’ll be able to plug it into your services right away.&lt;/p>
+&lt;p>But before the demo, let’s hit the basics.&lt;/p></description></item><item><title>How to Deploy Your Hugo Blog to GitHub Pages</title><link>https://vubon.me/posts/deploying-hugo-blog-to-github-pages/</link><pubDate>Wed, 31 Dec 2025 06:45:00 +0000</pubDate><guid>https://vubon.me/posts/deploying-hugo-blog-to-github-pages/</guid><description>&lt;p>If you want to publish a blog without paying for hosting? GitHub Pages is your friend. In this article, I will show you how to deploy a Hugo static site to GitHub Pages. Trust me, once you get it right, it&amp;rsquo;s super smooth.&lt;/p>
+&lt;h2 class="heading" id="why-hugo--github-pages">
+ Why Hugo + GitHub Pages?
+ &lt;a class="anchor" href="#why-hugo--github-pages">#&lt;/a>
+&lt;/h2>
+&lt;p>I was looking for a simple way to publish my blog. I don&amp;rsquo;t like to deal with WordPress hosting fees, database backups, or security updates. Hugo generates static HTML files—fast, secure, and free to host on GitHub Pages. What&amp;rsquo;s not to love?&lt;/p></description></item><item><title>How To Work A Card Network - Payment</title><link>https://vubon.me/posts/how-to-work-a-card-network-payment/</link><pubDate>Thu, 02 Mar 2023 06:53:33 +0000</pubDate><guid>https://vubon.me/posts/how-to-work-a-card-network-payment/</guid><description>&lt;p id="4b4b" class="pw-post-body-paragraph ig ih hj ii b ij ik il im in io ip iq ir is it iu iv iw ix iy iz ja jb jc jd hc bi" data-selectable-paragraph="">For a long time, I did not write a single article. Suddenly, I thought I should write something about the financial system because I have been working with financial companies for four years already. The concept may be old, but there are still a lot of people who do not know how it works!&lt;/p></description></item><item><title>Python: Symbol is better than function call</title><link>https://vubon.me/posts/python-symbol-is-better-than-function-call/</link><pubDate>Sun, 15 Sep 2019 21:24:56 +0000</pubDate><guid>https://vubon.me/posts/python-symbol-is-better-than-function-call/</guid><description>&lt;h2 class="heading" id="benchmarking-function-calls-vs-symbols">
+ Benchmarking Function Calls vs. Symbols
+ &lt;a class="anchor" href="#benchmarking-function-calls-vs-symbols">#&lt;/a>
+&lt;/h2>
+&lt;p>[The time difference is from my Core-i3 machine; it may vary on yours.]&lt;/p>
+&lt;p>
+
+
+
+
+&lt;figure class="">
+ 
+ 
+ &lt;div class="img-container">
+ &lt;img loading="lazy" alt="Function vs symbol benchmark" src="https://vubon.me/images/function_vs_symbol.png">
+ &lt;/div>
+ 
+
+ 
+&lt;/figure>
+&lt;/p>
+&lt;div class="code-block">
+ &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Example 1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">timeit&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">timeit&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">timeit&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;my_tuple = tuple([1, 2, 3, 4, 5, 6, 7, 8, 9, 0])&amp;#34;&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">timeit&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;my_tuple = ([1, 2, 3, 4, 5, 6, 7, 8, 9, 0])&amp;#34;&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Output&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 0.3789963669996723&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 0.1345829190004224&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Example 2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">timeit&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;my_set = set([1, 2, 3, 4, 5, 6, 7, 8, 9, 0])&amp;#34;&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">timeit&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;my_set = {*[1, 2, 3, 4, 5, 6, 7, 8, 9, 0]}&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Output&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 0.6751592210002855&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 0.547103707000133&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+ &lt;button class="copy-code-button">copy&lt;/button>
+&lt;/div>
+&lt;p>You will see a probably trivial difference—but a difference is still a difference. Think about huge datasets; the cost adds up.&lt;/p></description></item><item><title>Hmm Python @Property</title><link>https://vubon.me/posts/python-property/</link><pubDate>Tue, 11 Jun 2019 23:05:03 +0000</pubDate><guid>https://vubon.me/posts/python-property/</guid><description>&lt;p>
+
+
+
+
+&lt;figure class="">
+ 
+ 
+ &lt;div class="img-container">
+ &lt;img loading="lazy" alt="Property decorator diagram" src="https://vubon.me/images/property.png">
+ &lt;/div>
+ 
+
+ 
+&lt;/figure>
+&lt;/p>
+&lt;p>Hmm. I am thinking what is that? let&amp;rsquo;s deep a dive with me. Before I start  I want to ask some questions myself.&lt;/p>
+&lt;ol>
+&lt;li>What is &lt;code>@property&lt;/code> in Python?&lt;/li>
+&lt;li>When should I use the &lt;code>@Property&lt;/code> function?&lt;/li>
+&lt;li>How to use the &lt;code>@property&lt;/code> function?
+In this article, you will understand what exactly the Python &lt;code>@Property&lt;/code> does.&lt;/li>
+&lt;/ol>
+&lt;ol>
+ 	&lt;li>What is the Property in Python?
+In Python property is a built-in function. Property function is helping to modify class attributes and give backward compatibility. But you should have a basic concept of Python classes and method. Because of the &lt;code>@property&lt;/code> is typically used inside one.&lt;/li>
+ 	&lt;li>When should I use the &lt;code>@Property&lt;/code> function?
+Assume, You create a class that store user bank account information like a bank account number and balance.
+Let's create the class
+&lt;div class="code-block">
+ &lt;pre tabindex="0">&lt;code>class Account:
+ &amp;#34;&amp;#34;&amp;#34; A basic class that store bank account information &amp;#34;&amp;#34;&amp;#34;
+
+ def __init__(self, bank_account: str, balance: float):
+ self.bank_account = bank_account
+ self.balance = balance
+ self.account_information = dict(bank_account=self.bank_account, balance=self.balance)
+
+ def __str__(self):
+ return f&amp;#34;Bank Account: {self.bank_account} - balance: {self.balance}&amp;#34;
+
+
+account = Account(&amp;#34;0004-0067894712&amp;#34;, 1000.50)
+print(f&amp;#34;account number: {account.bank_account}&amp;#34;)
+print(f&amp;#34;Current balance: {account.balance}&amp;#34;)
+print(f&amp;#34;Account information: {account.account_information}&amp;#34;)
+
+# Output should look like this 
+account number: 0004-0067894712
+Current balance: 1000.5
+Account information: {&amp;#39;bank_account&amp;#39;: &amp;#39;0004-0067894712&amp;#39;, &amp;#39;balance&amp;#39;: 1000.5}&lt;/code>&lt;/pre>
+ &lt;button class="copy-code-button">copy&lt;/button>
+&lt;/div>
+&lt;p>Now, from this account we transfer the fund what will we get after calling the account_information attribute? Let&amp;rsquo;s transfer the balance and call the account_information attribute of the instance.&lt;/p></description></item><item><title>Clock Arithmetic or Modular Arithmetic</title><link>https://vubon.me/posts/clock-arithmetic-or-modular-arithmetic/</link><pubDate>Wed, 22 May 2019 00:29:56 +0000</pubDate><guid>https://vubon.me/posts/clock-arithmetic-or-modular-arithmetic/</guid><description>&lt;p>
+
+
+
+
+&lt;figure class="">
+ 
+ 
+ &lt;div class="img-container">
+ &lt;img loading="lazy" alt="Clock arithmetic diagram" src="https://vubon.me/images/slide_2.jpg">
+ &lt;/div>
+ 
+
+ 
+&lt;/figure>
+&lt;/p>
+&lt;p>image credit: slideplayer&lt;/p>
+&lt;p>&lt;span style="font-weight: 400;">6 + 9 = 3, Is this possible ??  Sometimes, we say this is a fallacy. But in Mathematics has an area that is called Clock Arithmetic or Modular Arithmetic.&lt;/span>&lt;/p>
+&lt;p>&lt;span style="font-weight: 400;">A familiar use of the clock arithmetic is in the 12-hour clock. Let’s explain the example. Here 6 means 6 o’clock and 9 means 9 hours later it will be 3:00. &lt;/span>&lt;/p>
+&lt;p>&lt;span style="font-weight: 400;">While I was studying in Mathematics at that time I was thinking this is totally bullshit, I could not apply anywhere. Seriously believe me. But I am proud of myself because I have completed my graduation in mathematics.&lt;/span>&lt;/p></description></item><item><title>Experiment with GIN index of PostgreSQL DB</title><link>https://vubon.me/posts/experiment-with-gin-index-of-postgresql-db/</link><pubDate>Thu, 04 Apr 2019 14:49:16 +0000</pubDate><guid>https://vubon.me/posts/experiment-with-gin-index-of-postgresql-db/</guid><description>&lt;p>PostgreSQL provides the index methods B-tree, hash, GiST, SP-GiST, GIN, and BRIN. Users can also define their own index methods, but that is fairly complicated. In this article, I will discuss the GIN index. GIN index is a very useful index method for a query, count, etc.&lt;/p>
+&lt;p>&lt;strong>Use cases GIN index:&lt;/strong>&lt;/p>
+&lt;ul>
+ 	&lt;li>Full-Text search(tsvector)&lt;/li>
+ 	&lt;li>Array Data Type&lt;/li>
+ 	&lt;li>JSONB&lt;/li>
+&lt;/ul>
+&lt;strong>What is the Gin index?&lt;/strong>
+From the &lt;a href="https://www.postgresql.org/docs/9.6/gin-intro.html">Docs&lt;/a>
+&lt;blockquote>&lt;em>"GIN stands for Generalized Inverted Index. GIN is designed for handling cases where the items to be indexed are composite values, and the queries to be handled by the index need to search for element values that appear within the composite items. For example, the items could be documents, and the queries could be searches for documents containing specific words."&lt;/em>&lt;/blockquote>
+![GIN index diagram](/images/GIN-index-1024x597.jpg)
+&lt;p>Image credit: &lt;a href="https://www.cybertec-postgresql.com">Cybertec Postgresql&lt;/a>
+&lt;strong>Create test data&lt;/strong>&lt;/p></description></item><item><title>String in Python</title><link>https://vubon.me/posts/string-in-python/</link><pubDate>Thu, 28 Mar 2019 06:47:23 +0000</pubDate><guid>https://vubon.me/posts/string-in-python/</guid><description>&lt;p>In computer science string is a sequence of characters and characters can be Alphabet, Numeric, Alpha-numeric. In computer science string defined by &amp;quot; &amp;quot; or &amp;lsquo;&amp;rsquo;. Example&lt;/p>
+&lt;pre class="wp-block-code">&lt;code>variable = "Hello Python"&lt;/code>&lt;/pre>
+&lt;p>Here &amp;ldquo;Hello Python&amp;rdquo; is a string value and variable is a variable of Hello Python string.&lt;/p>
+&lt;p>Everything in Python is an object. The string has few methods. I will discuss every method in this article.&lt;/p>
+&lt;p>&lt;strong>#Method 1: Capitalize&lt;/strong>&lt;/p>
+&lt;pre class="lang:python decode:true">str.capitalize()&lt;/pre>
+&lt;p>Return a copy of the string with Capitalize format.
+Example:&lt;/p></description></item></channel></rss>

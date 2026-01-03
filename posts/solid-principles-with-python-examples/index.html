@@ -1,0 +1,326 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=icon type=image/png sizes=192x192 href=/android-chrome-192x192.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><meta name=keywords content="Vubon,Vubon Roy,Vubon Notes,Engineering,Blog,Tutorials,Technology,Coding,Python,DevOps,Hugo,GitHub Pages"><meta name=description content><title>SOLID Principles with Python Examples | Vubon Notes
+</title><link rel=canonical href=https://vubon.me/posts/solid-principles-with-python-examples/><meta property="og:url" content="https://vubon.me/posts/solid-principles-with-python-examples/"><meta property="og:site_name" content="Vubon Notes"><meta property="og:title" content="SOLID Principles with Python Examples"><meta property="og:description" content="Let’s deep dive into SOLID principles. SOLID is a short form. It stands for
+Single Responsibility Principle Open and Closed Principle Lisvok Sub situation Principle Interface Segregation Principle Dependency Inversion Principle This is the meaning of the SOLID. In this article, I’m going to try to explain SOLID Principles in the simplest way so that it’s easy for beginners to understand.
+The SOLID principles were defined in the early 2000s by Robert C. Martin (Uncle Bob). Uncle Bob elaborated some of these and identified others already existing and said that these principles should be used to get good management of dependencies in our code."><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2026-01-03T12:00:00+00:00"><meta property="article:modified_time" content="2026-01-03T12:00:00+00:00"><meta property="article:tag" content="SOLID"><meta property="article:tag" content="Python"><meta property="article:tag" content="OOP"><meta property="article:tag" content="Design Principles"><script type=application/ld+json>{"@context":"https://schema.org","@type":"Person","name":"Vubon Roy","url":"https://vubon.me/","sameAs":["https://github.com/vubon","mailto:vubon.roy@gmail.com"],"description":"Vubon Notes is the personal blog of Vubon Roy, sharing engineering notes, tutorials, and experiments in technology, coding, Python, DevOps, Hugo, and more."}</script><link rel=stylesheet href=/assets/combined.min.329ddbca468aad36d8c3e211b202549594b5e9189d75140a974b8aa996a172de.css media=all></head><body class=auto><div class=content><header><div class=header><h1 class=header-title><a href=https://vubon.me/>Vubon Notes</a>
+<span class=header-social><a href=https://github.com/vubon target=_blank rel="noopener noreferrer" title=github><svg width="20" height="20" viewBox="0 0 24 24" fill="currentcolor"><path d="M12 0C5.374.0.0 5.373.0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931.0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176.0.0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221.0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+</a><a href=mailto:vubon.roy@gmail.com target=_blank rel="noopener noreferrer" title=email><svg width="20" height="20" viewBox="0 0 24 24" fill="currentcolor"><path d="M20 4H4c-1.1.0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1.0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg></a></span></h1><div class=header-menu><p class=small><a href=/>/home</a></p><p class=small><a href=/posts/>/blog</a></p></div></div><style>.header-social{display:inline-flex;gap:10px;margin-left:15px;vertical-align:middle}.header-social a{display:inline-flex;align-items:center;opacity:.7;transition:opacity .2s}.header-social a:hover{opacity:1}.header-social svg{vertical-align:middle}</style></header><main class=main><div><article><header class=single-intro-container><h1 class=single-title>SOLID Principles with Python Examples</h1><div class=single-subsummary><div><p class=single-date><time datetime=2026-01-03T12:00:00+00:00>January 3, 2026</time></p></div></div></header><div class=single-content><p><figure><div class=img-container><img loading=lazy alt="SOLID Principles Diagram" src=/images/solid-principles.png></div></figure></p><p>Let’s deep dive into SOLID principles. SOLID is a short form. It stands for</p><blockquote><ol><li>Single Responsibility Principle</li><li>Open and Closed Principle</li><li>Lisvok Sub situation Principle</li><li>Interface Segregation Principle</li><li>Dependency Inversion Principle</li></ol></blockquote><p>This is the meaning of the SOLID. In this article, I’m going to try to explain SOLID Principles in the simplest way so that it’s easy for beginners to understand.</p><p>The SOLID principles were defined in the early 2000s by <a href=https://en.wikipedia.org/wiki/Robert_C._Martin>Robert C. Martin</a> (Uncle Bob). Uncle Bob elaborated some of these and identified others already existing and said that these principles should be used to get good management of dependencies in our code.</p><h3 class=heading id=why-do-you-need-to-know>Why do you need to know?
+<a class=anchor href=#why-do-you-need-to-know>#</a></h3><blockquote><ol><li>Easy to understand the codebase</li><li>Easy to extend</li><li>Easy to maintain the codebase</li><li>Robust code</li><li>Minimum changing existing codebase or not at all.</li></ol></blockquote><p>Let’s go through each principle one by one:</p><h3 class=heading id=single-responsibility-principlesrp>Single Responsibility Principle(SRP):
+<a class=anchor href=#single-responsibility-principlesrp>#</a></h3><p>A class should have only one responsibility and only one reason to change. That means a class does not perform multiple jobs.</p><p><strong>Example:</strong><br><strong>Violation of SRP</strong></p><div class=code-block><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>class</span> <span class=nc>Account</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>   <span class=s2>&#34;&#34;&#34;Demo bank account class&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>account_no</span><span class=p>:</span> <span class=nb>str</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>       <span class=bp>self</span><span class=o>.</span><span class=n>account_no</span> <span class=o>=</span> <span class=n>account_no</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=k>def</span> <span class=nf>get_account_number</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>       <span class=s2>&#34;&#34;&#34;Get account number&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>       <span class=k>return</span> <span class=bp>self</span><span class=o>.</span><span class=n>account_no</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=k>def</span> <span class=nf>save</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>     <span class=s2>&#34;&#34;&#34;Save account number into DB&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>     <span class=k>pass</span> </span></span></code></pre></div><button class=copy-code-button>copy</button></div><h3 class=heading id=how-does-it-violate-the-srp>How does it violate the SRP?
+<a class=anchor href=#how-does-it-violate-the-srp>#</a></h3><p>In the account class, I am performing two tasks. One is stored data and another one gets account number. So it violates the SRP.</p><p><strong>Solution</strong>: A common solution to this problem is to apply the facade pattern. Let’s create another class and this class will handle database management job and the account class will only handle his properties.</p><div class=code-block><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>class</span> <span class=nc>AccountDB</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>   <span class=s2>&#34;&#34;&#34;Account DB management class &#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>   <span class=k>def</span> <span class=nf>get_account_number</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>_id</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>       <span class=s2>&#34;&#34;&#34;Get account number&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>       <span class=k>pass</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=k>def</span> <span class=nf>account_save</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>obj</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>       <span class=s2>&#34;&#34;&#34;Save account number into DB&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>       <span class=k>pass</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>Account</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>   <span class=s2>&#34;&#34;&#34;Demo bank account class &#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>   <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>account_no</span><span class=p>:</span> <span class=nb>str</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>       <span class=bp>self</span><span class=o>.</span><span class=n>account_no</span> <span class=o>=</span> <span class=n>account_no</span>
+</span></span><span class=line><span class=cl>       <span class=bp>self</span><span class=o>.</span><span class=n>_db</span> <span class=o>=</span> <span class=n>AccountDB</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=k>def</span> <span class=nf>get_account_number</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>       <span class=s2>&#34;&#34;&#34;Get account number&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>       <span class=k>return</span> <span class=bp>self</span><span class=o>.</span><span class=n>account_no</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=k>def</span> <span class=nf>get</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>_id</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>       <span class=s2>&#34;&#34;&#34;
+</span></span></span><span class=line><span class=cl><span class=s2>       :param _id:
+</span></span></span><span class=line><span class=cl><span class=s2>       :return:
+</span></span></span><span class=line><span class=cl><span class=s2>       &#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>       <span class=k>return</span> <span class=bp>self</span><span class=o>.</span><span class=n>_db</span><span class=o>.</span><span class=n>get_account_number</span><span class=p>(</span><span class=n>_id</span><span class=o>=</span><span class=n>_id</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=k>def</span> <span class=nf>save</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>       <span class=s2>&#34;&#34;&#34;account save&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>       <span class=bp>self</span><span class=o>.</span><span class=n>_db</span><span class=o>.</span><span class=n>account_save</span><span class=p>(</span><span class=n>obj</span><span class=o>=</span><span class=bp>self</span><span class=p>)</span></span></span></code></pre></div><button class=copy-code-button>copy</button></div><h3 class=heading id=open-and-closed-principleocp>Open and Closed Principle(OCP):
+<a class=anchor href=#open-and-closed-principleocp>#</a></h3><p><em>Software entities (classes, function, module) open for extension, but not for modification (or closed for modification)</em></p><p><strong>Example:</strong><br><strong>Violation of OCP</strong></p><div class=code-block><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>class</span> <span class=nc>Discount</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>   <span class=s2>&#34;&#34;&#34;Demo customer discount class&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>   <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>customer</span><span class=p>,</span> <span class=n>price</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>       <span class=bp>self</span><span class=o>.</span><span class=n>customer</span> <span class=o>=</span> <span class=n>customer</span>
+</span></span><span class=line><span class=cl>       <span class=bp>self</span><span class=o>.</span><span class=n>price</span> <span class=o>=</span> <span class=n>price</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=k>def</span> <span class=nf>give_discount</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>       <span class=s2>&#34;&#34;&#34;A discount method&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>       <span class=k>if</span> <span class=bp>self</span><span class=o>.</span><span class=n>customer</span> <span class=o>==</span> <span class=s1>&#39;normal&#39;</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>           <span class=k>return</span> <span class=bp>self</span><span class=o>.</span><span class=n>price</span> <span class=o>*</span> <span class=mf>0.2</span>
+</span></span><span class=line><span class=cl>       <span class=k>elif</span> <span class=bp>self</span><span class=o>.</span><span class=n>customer</span> <span class=o>==</span> <span class=s1>&#39;vip&#39;</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>           <span class=k>return</span> <span class=bp>self</span><span class=o>.</span><span class=n>price</span> <span class=o>*</span> <span class=mf>0.4</span></span></span></code></pre></div><button class=copy-code-button>copy</button></div><p>This example is failed to pass the Open and Close Principle(OCP). Assume, we have a super VIP customer and we want to give a discount of 0.8 percentage. What would we do in this case? Maybe we will solve the problem this way</p><div class=code-block><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=o>.......</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>give_discount</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>       <span class=s2>&#34;&#34;&#34;A discount method&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>       <span class=k>if</span> <span class=bp>self</span><span class=o>.</span><span class=n>customer</span> <span class=o>==</span> <span class=s1>&#39;normal&#39;</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>           <span class=k>return</span> <span class=bp>self</span><span class=o>.</span><span class=n>price</span> <span class=o>*</span> <span class=mf>0.2</span>
+</span></span><span class=line><span class=cl>       <span class=k>elif</span> <span class=bp>self</span><span class=o>.</span><span class=n>customer</span> <span class=o>==</span> <span class=s1>&#39;vip&#39;</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>           <span class=k>return</span> <span class=bp>self</span><span class=o>.</span><span class=n>price</span> <span class=o>*</span> <span class=mf>0.4</span>
+</span></span><span class=line><span class=cl>       <span class=k>elif</span> <span class=bp>self</span><span class=o>.</span><span class=n>customer</span> <span class=o>==</span>  <span class=s1>&#39;supvip&#39;</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>           <span class=k>return</span> <span class=bp>self</span><span class=o>.</span><span class=n>price</span> <span class=o>*</span> <span class=mf>0.8</span></span></span></code></pre></div><button class=copy-code-button>copy</button></div><p>But this solution violates the OCP. Because we can’t modify the give_discount method. Only we can extend the method.</p><p><strong>Solution:</strong></p><div class=code-block><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>class</span> <span class=nc>Discount</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>   <span class=s2>&#34;&#34;&#34;Demo customer discount class&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>   <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>customer</span><span class=p>,</span> <span class=n>price</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>       <span class=bp>self</span><span class=o>.</span><span class=n>customer</span> <span class=o>=</span> <span class=n>customer</span>
+</span></span><span class=line><span class=cl>       <span class=bp>self</span><span class=o>.</span><span class=n>price</span> <span class=o>=</span> <span class=n>price</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=k>def</span> <span class=nf>get_discount</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>       <span class=s2>&#34;&#34;&#34;A discount method&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>       <span class=k>return</span> <span class=bp>self</span><span class=o>.</span><span class=n>price</span> <span class=o>*</span> <span class=mf>0.2</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>VIPDiscount</span><span class=p>(</span><span class=n>Discount</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>   <span class=s2>&#34;&#34;&#34;Demo VIP customer discount class&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>   <span class=k>def</span> <span class=nf>get_discount</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>       <span class=s2>&#34;&#34;&#34;A discount method&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>       <span class=k>return</span> <span class=nb>super</span><span class=p>()</span><span class=o>.</span><span class=n>get_discount</span><span class=p>()</span> <span class=o>*</span> <span class=mi>2</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>SuperVIPDiscount</span><span class=p>(</span><span class=n>VIPDiscount</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>   <span class=s2>&#34;&#34;&#34;Demo super vip customer discount class&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>   <span class=k>def</span> <span class=nf>get_discount</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>       <span class=s2>&#34;&#34;&#34;A discount method&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>       <span class=k>return</span> <span class=nb>super</span><span class=p>()</span><span class=o>.</span><span class=n>get_discount</span><span class=p>()</span> <span class=o>*</span> <span class=mi>2</span></span></span></code></pre></div><button class=copy-code-button>copy</button></div><h3 class=heading id=liskov-substitution-principlelsp>Liskov Substitution Principle(LSP):
+<a class=anchor href=#liskov-substitution-principlelsp>#</a></h3><p><em>Let φ(x) be a property provable about objects x of type T. Then φ(y) should be true for objects y of type S where S is a subtype of T.
+More formally, this is the original definition (LISKOV 01) of Liskov’s substitution principle: if S is a subtype of T, then objects of type T may be replaced by objects of type S, without breaking the program.</em></p><p>Liskov Substitution Principle was introduced by Barbara Liskov in her conference keynote “Data Abstraction” in 1987.</p><p><strong>Example</strong><br><strong>Violation of LSP</strong></p><div class=code-block><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>class</span> <span class=nc>Vehicle</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>   <span class=s2>&#34;&#34;&#34;A demo Vehicle class&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>   <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>name</span><span class=p>:</span> <span class=nb>str</span><span class=p>,</span> <span class=n>speed</span><span class=p>:</span> <span class=nb>float</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>       <span class=bp>self</span><span class=o>.</span><span class=n>name</span> <span class=o>=</span> <span class=n>name</span>
+</span></span><span class=line><span class=cl>       <span class=bp>self</span><span class=o>.</span><span class=n>speed</span> <span class=o>=</span> <span class=n>speed</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=k>def</span> <span class=nf>get_name</span><span class=p>(</span><span class=bp>self</span><span class=p>)</span> <span class=o>-&gt;</span> <span class=nb>str</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>       <span class=s2>&#34;&#34;&#34;Get vehicle name&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>       <span class=k>return</span> <span class=sa>f</span><span class=s2>&#34;The vehicle name </span><span class=si>{</span><span class=bp>self</span><span class=o>.</span><span class=n>name</span><span class=si>}</span><span class=s2>&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=k>def</span> <span class=nf>get_speed</span><span class=p>(</span><span class=bp>self</span><span class=p>)</span> <span class=o>-&gt;</span> <span class=nb>str</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>       <span class=s2>&#34;&#34;&#34;Get vehicle speed&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>       <span class=k>return</span> <span class=sa>f</span><span class=s2>&#34;The vehicle speed </span><span class=si>{</span><span class=bp>self</span><span class=o>.</span><span class=n>speed</span><span class=si>}</span><span class=s2>&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=k>def</span> <span class=nf>engine</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>       <span class=s2>&#34;&#34;&#34;A vehicle engine&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>       <span class=k>pass</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=k>def</span> <span class=nf>start_engine</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>       <span class=s2>&#34;&#34;&#34;A vehicle engine start&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>       <span class=bp>self</span><span class=o>.</span><span class=n>engine</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>Car</span><span class=p>(</span><span class=n>Vehicle</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>   <span class=s2>&#34;&#34;&#34;A demo Car Vehicle class&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>   <span class=k>def</span> <span class=nf>start_engine</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>       <span class=k>pass</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>Bicycle</span><span class=p>(</span><span class=n>Vehicle</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>   <span class=s2>&#34;&#34;&#34;A demo Bicycle Vehicle class&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>   <span class=k>def</span> <span class=nf>start_engine</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>       <span class=k>pass</span></span></span></code></pre></div><button class=copy-code-button>copy</button></div><p>In Bicycle class violates the LSP. Cause in the Vehicle class has an engine method. But naturally, a bicycle has no engine. So we could not start any engine.</p><p>Refactor the code and make a solution for this problem.</p><p><strong>Solution:</strong></p><div class=code-block><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>class</span> <span class=nc>Vehicle</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>   <span class=s2>&#34;&#34;&#34;A demo Vehicle class&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>   <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>name</span><span class=p>:</span> <span class=nb>str</span><span class=p>,</span> <span class=n>speed</span><span class=p>:</span> <span class=nb>float</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>       <span class=bp>self</span><span class=o>.</span><span class=n>name</span> <span class=o>=</span> <span class=n>name</span>
+</span></span><span class=line><span class=cl>       <span class=bp>self</span><span class=o>.</span><span class=n>speed</span> <span class=o>=</span> <span class=n>speed</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=k>def</span> <span class=nf>get_name</span><span class=p>(</span><span class=bp>self</span><span class=p>)</span> <span class=o>-&gt;</span> <span class=nb>str</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>       <span class=s2>&#34;&#34;&#34;Get vehicle name&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>       <span class=k>return</span> <span class=sa>f</span><span class=s2>&#34;The vehicle name </span><span class=si>{</span><span class=bp>self</span><span class=o>.</span><span class=n>name</span><span class=si>}</span><span class=s2>&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=k>def</span> <span class=nf>get_speed</span><span class=p>(</span><span class=bp>self</span><span class=p>)</span> <span class=o>-&gt;</span> <span class=nb>str</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>       <span class=s2>&#34;&#34;&#34;Get vehicle speed&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>       <span class=k>return</span> <span class=sa>f</span><span class=s2>&#34;The vehicle speed </span><span class=si>{</span><span class=bp>self</span><span class=o>.</span><span class=n>speed</span><span class=si>}</span><span class=s2>&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>VehicleWithoutEngine</span><span class=p>(</span><span class=n>Vehicle</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>   <span class=s2>&#34;&#34;&#34;A demo Vehicle without engine class&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>   <span class=k>def</span> <span class=nf>start_moving</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>      <span class=s2>&#34;&#34;&#34;Moving&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>      <span class=k>raise</span> <span class=bp>NotImplemented</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>VehicleWithEngine</span><span class=p>(</span><span class=n>Vehicle</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>   <span class=s2>&#34;&#34;&#34;A demo Vehicle engine class&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>   <span class=k>def</span> <span class=nf>engine</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>      <span class=s2>&#34;&#34;&#34;A vehicle engine&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>      <span class=k>pass</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=k>def</span> <span class=nf>start_engine</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>      <span class=s2>&#34;&#34;&#34;A vehicle engine start&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>      <span class=bp>self</span><span class=o>.</span><span class=n>engine</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>Car</span><span class=p>(</span><span class=n>VehicleWithEngine</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>   <span class=s2>&#34;&#34;&#34;A demo Car Vehicle class&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>   <span class=k>def</span> <span class=nf>start_engine</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>       <span class=k>pass</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>Bicycle</span><span class=p>(</span><span class=n>VehicleWithoutEngine</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>   <span class=s2>&#34;&#34;&#34;A demo Bicycle Vehicle class&#34;&#34;&#34;</span> 
+</span></span><span class=line><span class=cl>   <span class=k>def</span> <span class=nf>start_moving</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>       <span class=k>pass</span></span></span></code></pre></div><button class=copy-code-button>copy</button></div><p>Actually, LSP is a concept that applies to all kinds of polymorphism. Only if you don’t use polymorphism of all you don’t need to care about the LSP.</p><h3 class=heading id=interface-segregation-principleisp>Interface Segregation Principle(ISP):
+<a class=anchor href=#interface-segregation-principleisp>#</a></h3><p><em>Actually, This principle suggests that “A client should not be forced to implement an interface that it does not use”</em></p><p><strong>Example:</strong><br><strong>Violation of ISP</strong></p><div class=code-block><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>class</span> <span class=nc>Shape</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>   <span class=s2>&#34;&#34;&#34;A demo shape class&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>   <span class=k>def</span> <span class=nf>draw_circle</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>       <span class=s2>&#34;&#34;&#34;Draw a circle&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>       <span class=k>raise</span> <span class=bp>NotImplemented</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=k>def</span> <span class=nf>draw_square</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>       <span class=s2>&#34;&#34;&#34; Draw a square&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>       <span class=k>raise</span> <span class=bp>NotImplemented</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>Circle</span><span class=p>(</span><span class=n>Shape</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=s2>&#34;&#34;&#34;A demo circle class&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>   <span class=k>def</span> <span class=nf>draw_circle</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>       <span class=s2>&#34;&#34;&#34;Draw a circle&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>       <span class=k>pass</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=k>def</span> <span class=nf>draw_square</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>       <span class=s2>&#34;&#34;&#34; Draw a square&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>       <span class=k>pass</span></span></span></code></pre></div><button class=copy-code-button>copy</button></div><p>In the above example, we need to call an unnecessary method in the Circle class. Hence the example violated the Interface Segregation Principle.</p><p><strong>Solution:</strong></p><div class=code-block><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>class</span> <span class=nc>Shape</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>   <span class=s2>&#34;&#34;&#34;A demo shape class&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>   <span class=k>def</span> <span class=nf>draw</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>      <span class=s2>&#34;&#34;&#34;Draw a shape&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>      <span class=k>raise</span> <span class=bp>NotImplemented</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>Circle</span><span class=p>(</span><span class=n>Shape</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>   <span class=s2>&#34;&#34;&#34;A demo circle class&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>   <span class=k>def</span> <span class=nf>draw</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>      <span class=s2>&#34;&#34;&#34;Draw a circle&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>      <span class=k>pass</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>Square</span><span class=p>(</span><span class=n>Shape</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>   <span class=s2>&#34;&#34;&#34;A demo square class&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>   <span class=k>def</span> <span class=nf>draw</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>      <span class=s2>&#34;&#34;&#34;Draw a square&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>      <span class=k>pass</span></span></span></code></pre></div><button class=copy-code-button>copy</button></div><p>Another example</p><div class=code-block><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>class</span> <span class=nc>BankAccount</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>   <span class=s2>&#34;&#34;&#34;A demo Bank Account class&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>   <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>balance</span><span class=p>:</span> <span class=nb>float</span><span class=p>,</span> <span class=n>account</span><span class=p>:</span> <span class=nb>str</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>       <span class=bp>self</span><span class=o>.</span><span class=n>account</span> <span class=o>=</span> <span class=p>{</span><span class=sa>f</span><span class=s2>&#34;</span><span class=si>{</span><span class=n>account</span><span class=si>}</span><span class=s2>&#34;</span><span class=p>:</span> <span class=n>balance</span><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=k>def</span> <span class=nf>balance</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>account</span><span class=p>:</span> <span class=nb>str</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>       <span class=s2>&#34;&#34;&#34;Get current balance&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>       <span class=k>raise</span> <span class=bp>NotImplemented</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>Deposit</span><span class=p>(</span><span class=n>BankAccount</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>   <span class=s2>&#34;&#34;&#34;A demo circle class&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>   <span class=k>def</span> <span class=nf>balance</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>account</span><span class=p>:</span> <span class=nb>str</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>      <span class=s2>&#34;&#34;&#34;Get current balance&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>      <span class=k>return</span> <span class=bp>self</span><span class=o>.</span><span class=n>account</span><span class=o>.</span><span class=n>get</span><span class=p>(</span><span class=n>account</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=k>def</span> <span class=nf>deposit</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>amount</span><span class=p>:</span> <span class=nb>float</span><span class=p>,</span> <span class=n>account</span><span class=p>:</span> <span class=nb>str</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>       <span class=s2>&#34;&#34;&#34;Deposit a new amount&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>       <span class=n>current</span> <span class=o>=</span> <span class=bp>self</span><span class=o>.</span><span class=n>balance</span><span class=p>(</span><span class=n>account</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>       <span class=n>new_amount</span> <span class=o>=</span> <span class=n>current</span> <span class=o>+</span> <span class=n>amount</span>
+</span></span><span class=line><span class=cl>       <span class=bp>self</span><span class=o>.</span><span class=n>account</span><span class=o>.</span><span class=n>update</span><span class=p>({</span><span class=n>account</span><span class=p>:</span> <span class=n>new_amount</span><span class=p>})</span></span></span></code></pre></div><button class=copy-code-button>copy</button></div><h3 class=heading id=dependency-inversion-principledip>Dependency Inversion Principle(DIP):
+<a class=anchor href=#dependency-inversion-principledip>#</a></h3><p>This principle suggests that below two points.<br>a. High-level modules should not depend on low-level modules. Both should depend on abstractions.<br>b. Abstractions should not depend on details. Details should depend on abstractions.</p><p><strong>Example:</strong><br><strong>Violation of DIP</strong></p><div class=code-block><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>class</span> <span class=nc>BackendDeveloper</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=s2>&#34;&#34;&#34;This is a low-level module&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nd>@staticmethod</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>python</span><span class=p>():</span>
+</span></span><span class=line><span class=cl>        <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;Writing Python code&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>FrontendDeveloper</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=s2>&#34;&#34;&#34;This is a low-level module&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nd>@staticmethod</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>javascript</span><span class=p>():</span>
+</span></span><span class=line><span class=cl>        <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;Writing JavaScript code&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>Project</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=s2>&#34;&#34;&#34;This is a high-level module&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>backend</span> <span class=o>=</span> <span class=n>BackendDeveloper</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>frontend</span> <span class=o>=</span> <span class=n>FrontendDeveloper</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>develop</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>backend</span><span class=o>.</span><span class=n>python</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>frontend</span><span class=o>.</span><span class=n>javascript</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=s2>&#34;Develop codebase&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>project</span> <span class=o>=</span> <span class=n>Project</span><span class=p>()</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>project</span><span class=o>.</span><span class=n>develop</span><span class=p>())</span></span></span></code></pre></div><button class=copy-code-button>copy</button></div><p>Another example</p><div class=code-block><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>class</span> <span class=nc>NewsPerson</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=s2>&#34;&#34;&#34;This is a high-level module&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nd>@staticmethod</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>publish</span><span class=p>(</span><span class=n>news</span><span class=p>:</span> <span class=nb>str</span><span class=p>)</span> <span class=o>-&gt;</span> <span class=kc>None</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=s2>&#34;&#34;&#34;
+</span></span></span><span class=line><span class=cl><span class=s2>        :param news:
+</span></span></span><span class=line><span class=cl><span class=s2>        :return:
+</span></span></span><span class=line><span class=cl><span class=s2>        &#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>        <span class=nb>print</span><span class=p>(</span><span class=n>NewsPaper</span><span class=p>()</span><span class=o>.</span><span class=n>publish</span><span class=p>(</span><span class=n>news</span><span class=o>=</span><span class=n>news</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>NewsPaper</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=s2>&#34;&#34;&#34;This is a low-level module&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nd>@staticmethod</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>publish</span><span class=p>(</span><span class=n>news</span><span class=p>:</span> <span class=nb>str</span><span class=p>)</span> <span class=o>-&gt;</span> <span class=kc>None</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=s2>&#34;&#34;&#34;
+</span></span></span><span class=line><span class=cl><span class=s2>        :param news:
+</span></span></span><span class=line><span class=cl><span class=s2>        :return:
+</span></span></span><span class=line><span class=cl><span class=s2>        &#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>        <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&#34;</span><span class=si>{</span><span class=n>news</span><span class=si>}</span><span class=s2> Hello newspaper&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>person</span> <span class=o>=</span> <span class=n>NewsPerson</span><span class=p>()</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>person</span><span class=o>.</span><span class=n>publish</span><span class=p>(</span><span class=s2>&#34;News Paper&#34;</span><span class=p>))</span></span></span></code></pre></div><button class=copy-code-button>copy</button></div><p>The project class is a high-level module and backend & frontend are the low-level modules. In this example, we found that the high-level module depends on the low-level module. Hence this example are violated the Dependency Inversion Principle. Let’s solve the problem according to the definition of DIP.</p><p><strong>Solution:</strong>
+Example 1</p><div class=code-block><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>class</span> <span class=nc>BackendDeveloper</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>   <span class=s2>&#34;&#34;&#34;This is a low-level module&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>   <span class=k>def</span> <span class=nf>develop</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>       <span class=bp>self</span><span class=o>.</span><span class=n>__python_code</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=nd>@staticmethod</span>
+</span></span><span class=line><span class=cl>   <span class=k>def</span> <span class=nf>__python_code</span><span class=p>():</span>
+</span></span><span class=line><span class=cl>       <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;Writing Python code&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>FrontendDeveloper</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>   <span class=s2>&#34;&#34;&#34;This is a low-level module&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>   <span class=k>def</span> <span class=nf>develop</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>       <span class=bp>self</span><span class=o>.</span><span class=n>__javascript</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=nd>@staticmethod</span>
+</span></span><span class=line><span class=cl>   <span class=k>def</span> <span class=nf>__javascript</span><span class=p>():</span>
+</span></span><span class=line><span class=cl>       <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;Writing JavaScript code&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>Developers</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>   <span class=s2>&#34;&#34;&#34;An Abstract module&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>   <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>       <span class=bp>self</span><span class=o>.</span><span class=n>backend</span> <span class=o>=</span> <span class=n>BackendDeveloper</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>       <span class=bp>self</span><span class=o>.</span><span class=n>frontend</span> <span class=o>=</span> <span class=n>FrontendDeveloper</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=k>def</span> <span class=nf>develop</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>       <span class=bp>self</span><span class=o>.</span><span class=n>backend</span><span class=o>.</span><span class=n>develop</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>       <span class=bp>self</span><span class=o>.</span><span class=n>frontend</span><span class=o>.</span><span class=n>develop</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>Project</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>   <span class=s2>&#34;&#34;&#34;This is a high-level module&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>   <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>       <span class=bp>self</span><span class=o>.</span><span class=n>__developers</span> <span class=o>=</span> <span class=n>Developers</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=k>def</span> <span class=nf>develops</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>       <span class=k>return</span> <span class=bp>self</span><span class=o>.</span><span class=n>__developers</span><span class=o>.</span><span class=n>develop</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>project</span> <span class=o>=</span> <span class=n>Project</span><span class=p>()</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>project</span><span class=o>.</span><span class=n>develops</span><span class=p>())</span></span></span></code></pre></div><button class=copy-code-button>copy</button></div><p>Example 2:</p><div class=code-block><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>class</span> <span class=nc>NewsPerson</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>   <span class=s2>&#34;&#34;&#34;This is a high-level module&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>   <span class=nd>@staticmethod</span>
+</span></span><span class=line><span class=cl>   <span class=k>def</span> <span class=nf>publish</span><span class=p>(</span><span class=n>news</span><span class=p>:</span> <span class=nb>str</span><span class=p>,</span> <span class=n>publisher</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span> <span class=o>-&gt;</span> <span class=kc>None</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>       <span class=nb>print</span><span class=p>(</span><span class=n>publisher</span><span class=o>.</span><span class=n>publish</span><span class=p>(</span><span class=n>news</span><span class=o>=</span><span class=n>news</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>NewsPaper</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>   <span class=s2>&#34;&#34;&#34;This is a low-level module&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>   <span class=nd>@staticmethod</span>
+</span></span><span class=line><span class=cl>   <span class=k>def</span> <span class=nf>publish</span><span class=p>(</span><span class=n>news</span><span class=p>:</span> <span class=nb>str</span><span class=p>)</span> <span class=o>-&gt;</span> <span class=kc>None</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>       <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;</span><span class=si>{}</span><span class=s2> news paper&#34;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=n>news</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>Facebook</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>   <span class=s2>&#34;&#34;&#34;This is a low-level module&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>   <span class=nd>@staticmethod</span>
+</span></span><span class=line><span class=cl>   <span class=k>def</span> <span class=nf>publish</span><span class=p>(</span><span class=n>news</span><span class=p>:</span> <span class=nb>str</span><span class=p>)</span> <span class=o>-&gt;</span> <span class=kc>None</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>       <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&#34;</span><span class=si>{</span><span class=n>news</span><span class=si>}</span><span class=s2> - share this post on </span><span class=si>{</span><span class=n>news</span><span class=si>}</span><span class=s2>&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>person</span> <span class=o>=</span> <span class=n>NewsPerson</span><span class=p>()</span>
+</span></span><span class=line><span class=cl><span class=n>person</span><span class=o>.</span><span class=n>publish</span><span class=p>(</span><span class=s2>&#34;hello&#34;</span><span class=p>,</span> <span class=n>NewsPaper</span><span class=p>())</span>
+</span></span><span class=line><span class=cl><span class=n>person</span><span class=o>.</span><span class=n>publish</span><span class=p>(</span><span class=s2>&#34;facebook&#34;</span><span class=p>,</span> <span class=n>Facebook</span><span class=p>())</span></span></span></code></pre></div><button class=copy-code-button>copy</button></div><p>I hope the purpose of this article is clear and you now know when and how to use it. If you did, congratulations! I will meet you in the next one.<br>That all for today. Thank you for reading my article.</p><p><a href=https://github.com/vubon/SOLID-Principles>Source Code</a></p><p><strong>Reference:</strong></p><ol><li><a href=https://raygun.com/blog/solid-design-principles/>https://raygun.com/blog/solid-design-principles/</a></li><li><a href=https://learning.oreilly.com/library/view/clean-code/9780136083238/>https://learning.oreilly.com/library/view/clean-code/9780136083238/</a></li></ol></div></article><div class=single-pagination><hr><div class=flexnowrap><div class=single-pagination-prev><div class=single-pagination-container-prev><div class=single-pagination-text>←</div><div class=single-pagination-text><a href=/posts/fan-out-fan-in-in-golang/>Fan-Out Fan-In in Golang — The easy way</a></div></div></div><div class=single-pagination-next></div></div><hr></div><div class=back-to-top><a href=#top>back to top</a></div></div></main></div><footer><p>Powered by
+<a href=https://gohugo.io/>Hugo</a>
+and
+<a href=https://github.com/tomfran/typo>tomfran/typo</a></p></footer></body><script src=/js/theme-switch.js></script><script defer src=/js/copy-code.js></script></html>

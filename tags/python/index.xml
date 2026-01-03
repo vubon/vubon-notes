@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Python on Vubon Notes</title><link>https://vubon.me/tags/python/</link><description>Recent content in Python on Vubon Notes</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sat, 03 Jan 2026 12:00:00 +0000</lastBuildDate><atom:link href="https://vubon.me/tags/python/index.xml" rel="self" type="application/rss+xml"/><item><title>SOLID Principles with Python Examples</title><link>https://vubon.me/posts/solid-principles-with-python-examples/</link><pubDate>Sat, 03 Jan 2026 12:00:00 +0000</pubDate><guid>https://vubon.me/posts/solid-principles-with-python-examples/</guid><description>&lt;p>
+
+
+
+
+&lt;figure class="">
+ 
+ 
+ &lt;div class="img-container">
+ &lt;img loading="lazy" alt="SOLID Principles Diagram" src="https://vubon.me/images/solid-principles.png">
+ &lt;/div>
+ 
+
+ 
+&lt;/figure>
+&lt;/p>
+&lt;p>Let’s deep dive into SOLID principles. SOLID is a short form. It stands for&lt;/p>
+&lt;blockquote>
+&lt;ol>
+&lt;li>Single Responsibility Principle&lt;/li>
+&lt;li>Open and Closed Principle&lt;/li>
+&lt;li>Lisvok Sub situation Principle&lt;/li>
+&lt;li>Interface Segregation Principle&lt;/li>
+&lt;li>Dependency Inversion Principle&lt;/li>
+&lt;/ol>
+&lt;/blockquote>
+&lt;p>This is the meaning of the SOLID. In this article, I’m going to try to explain SOLID Principles in the simplest way so that it’s easy for beginners to understand.&lt;/p>
+&lt;p>The SOLID principles were defined in the early 2000s by &lt;a href="https://en.wikipedia.org/wiki/Robert_C._Martin">Robert C. Martin&lt;/a> (Uncle Bob). Uncle Bob elaborated some of these and identified others already existing and said that these principles should be used to get good management of dependencies in our code.&lt;/p></description></item><item><title>Hmm Python @Property</title><link>https://vubon.me/posts/python-property/</link><pubDate>Tue, 11 Jun 2019 23:05:03 +0000</pubDate><guid>https://vubon.me/posts/python-property/</guid><description>&lt;p>
+
+
+
+
+&lt;figure class="">
+ 
+ 
+ &lt;div class="img-container">
+ &lt;img loading="lazy" alt="Property decorator diagram" src="https://vubon.me/images/property.png">
+ &lt;/div>
+ 
+
+ 
+&lt;/figure>
+&lt;/p>
+&lt;p>Hmm. I am thinking what is that? let&amp;rsquo;s deep a dive with me. Before I start  I want to ask some questions myself.&lt;/p>
+&lt;ol>
+&lt;li>What is &lt;code>@property&lt;/code> in Python?&lt;/li>
+&lt;li>When should I use the &lt;code>@Property&lt;/code> function?&lt;/li>
+&lt;li>How to use the &lt;code>@property&lt;/code> function?
+In this article, you will understand what exactly the Python &lt;code>@Property&lt;/code> does.&lt;/li>
+&lt;/ol>
+&lt;ol>
+ 	&lt;li>What is the Property in Python?
+In Python property is a built-in function. Property function is helping to modify class attributes and give backward compatibility. But you should have a basic concept of Python classes and method. Because of the &lt;code>@property&lt;/code> is typically used inside one.&lt;/li>
+ 	&lt;li>When should I use the &lt;code>@Property&lt;/code> function?
+Assume, You create a class that store user bank account information like a bank account number and balance.
+Let's create the class
+&lt;div class="code-block">
+ &lt;pre tabindex="0">&lt;code>class Account:
+ &amp;#34;&amp;#34;&amp;#34; A basic class that store bank account information &amp;#34;&amp;#34;&amp;#34;
+
+ def __init__(self, bank_account: str, balance: float):
+ self.bank_account = bank_account
+ self.balance = balance
+ self.account_information = dict(bank_account=self.bank_account, balance=self.balance)
+
+ def __str__(self):
+ return f&amp;#34;Bank Account: {self.bank_account} - balance: {self.balance}&amp;#34;
+
+
+account = Account(&amp;#34;0004-0067894712&amp;#34;, 1000.50)
+print(f&amp;#34;account number: {account.bank_account}&amp;#34;)
+print(f&amp;#34;Current balance: {account.balance}&amp;#34;)
+print(f&amp;#34;Account information: {account.account_information}&amp;#34;)
+
+# Output should look like this 
+account number: 0004-0067894712
+Current balance: 1000.5
+Account information: {&amp;#39;bank_account&amp;#39;: &amp;#39;0004-0067894712&amp;#39;, &amp;#39;balance&amp;#39;: 1000.5}&lt;/code>&lt;/pre>
+ &lt;button class="copy-code-button">copy&lt;/button>
+&lt;/div>
+&lt;p>Now, from this account we transfer the fund what will we get after calling the account_information attribute? Let&amp;rsquo;s transfer the balance and call the account_information attribute of the instance.&lt;/p></description></item><item><title>String in Python</title><link>https://vubon.me/posts/string-in-python/</link><pubDate>Thu, 28 Mar 2019 06:47:23 +0000</pubDate><guid>https://vubon.me/posts/string-in-python/</guid><description>&lt;p>In computer science string is a sequence of characters and characters can be Alphabet, Numeric, Alpha-numeric. In computer science string defined by &amp;quot; &amp;quot; or &amp;lsquo;&amp;rsquo;. Example&lt;/p>
+&lt;pre class="wp-block-code">&lt;code>variable = "Hello Python"&lt;/code>&lt;/pre>
+&lt;p>Here &amp;ldquo;Hello Python&amp;rdquo; is a string value and variable is a variable of Hello Python string.&lt;/p>
+&lt;p>Everything in Python is an object. The string has few methods. I will discuss every method in this article.&lt;/p>
+&lt;p>&lt;strong>#Method 1: Capitalize&lt;/strong>&lt;/p>
+&lt;pre class="lang:python decode:true">str.capitalize()&lt;/pre>
+&lt;p>Return a copy of the string with Capitalize format.
+Example:&lt;/p></description></item></channel></rss>

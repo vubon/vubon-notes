@@ -1,0 +1,158 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=icon type=image/png sizes=192x192 href=/android-chrome-192x192.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><meta name=keywords content="Vubon,Vubon Roy,Vubon Notes,Engineering,Blog,Tutorials,Technology,Coding,Python,DevOps,Hugo,GitHub Pages"><meta name=description content><title>Hmm Python @Property | Vubon Notes
+</title><link rel=canonical href=https://vubon.me/posts/python-property/><meta property="og:url" content="https://vubon.me/posts/python-property/"><meta property="og:site_name" content="Vubon Notes"><meta property="og:title" content="Hmm Python @Property"><meta property="og:description" content='Hmm. I am thinking what is that? let’s deep a dive with me. Before I start I want to ask some questions myself.
+What is @property in Python? When should I use the @Property function? How to use the @property function? In this article, you will understand what exactly the Python @Property does. What is the Property in Python? In Python property is a built-in function. Property function is helping to modify class attributes and give backward compatibility. But you should have a basic concept of Python classes and method. Because of the @property is typically used inside one. When should I use the @Property function? Assume, You create a class that store user bank account information like a bank account number and balance. Let&#39;s create the class class Account: """ A basic class that store bank account information """ def __init__(self, bank_account: str, balance: float): self.bank_account = bank_account self.balance = balance self.account_information = dict(bank_account=self.bank_account, balance=self.balance) def __str__(self): return f"Bank Account: {self.bank_account} - balance: {self.balance}" account = Account("0004-0067894712", 1000.50) print(f"account number: {account.bank_account}") print(f"Current balance: {account.balance}") print(f"Account information: {account.account_information}") # Output should look like this account number: 0004-0067894712 Current balance: 1000.5 Account information: {&#39;bank_account&#39;: &#39;0004-0067894712&#39;, &#39;balance&#39;: 1000.5} copy Now, from this account we transfer the fund what will we get after calling the account_information attribute? Let’s transfer the balance and call the account_information attribute of the instance.'><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2019-06-11T23:05:03+00:00"><meta property="article:modified_time" content="2019-06-12T15:42:18+00:00"><meta property="article:tag" content="Functions"><meta property="article:tag" content="Python"><script type=application/ld+json>{"@context":"https://schema.org","@type":"Person","name":"Vubon Roy","url":"https://vubon.me/","sameAs":["https://github.com/vubon","mailto:vubon.roy@gmail.com"],"description":"Vubon Notes is the personal blog of Vubon Roy, sharing engineering notes, tutorials, and experiments in technology, coding, Python, DevOps, Hugo, and more."}</script><link rel=stylesheet href=/assets/combined.min.329ddbca468aad36d8c3e211b202549594b5e9189d75140a974b8aa996a172de.css media=all></head><body class=auto><div class=content><header><div class=header><h1 class=header-title><a href=https://vubon.me/>Vubon Notes</a>
+<span class=header-social><a href=https://github.com/vubon target=_blank rel="noopener noreferrer" title=github><svg width="20" height="20" viewBox="0 0 24 24" fill="currentcolor"><path d="M12 0C5.374.0.0 5.373.0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931.0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176.0.0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221.0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+</a><a href=mailto:vubon.roy@gmail.com target=_blank rel="noopener noreferrer" title=email><svg width="20" height="20" viewBox="0 0 24 24" fill="currentcolor"><path d="M20 4H4c-1.1.0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1.0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg></a></span></h1><div class=header-menu><p class=small><a href=/>/home</a></p><p class=small><a href=/posts/>/blog</a></p></div></div><style>.header-social{display:inline-flex;gap:10px;margin-left:15px;vertical-align:middle}.header-social a{display:inline-flex;align-items:center;opacity:.7;transition:opacity .2s}.header-social a:hover{opacity:1}.header-social svg{vertical-align:middle}</style></header><main class=main><div><article><header class=single-intro-container><h1 class=single-title>Hmm Python @Property</h1><div class=single-subsummary><div><p class=single-date><time datetime=2019-06-11T23:05:03+00:00>June 11, 2019</time></p></div></div></header><div class=single-content><p><figure><div class=img-container><img loading=lazy alt="Property decorator diagram" src=/images/property.png></div></figure></p><p>Hmm. I am thinking what is that? let&rsquo;s deep a dive with me. Before I start  I want to ask some questions myself.</p><ol><li>What is <code>@property</code> in Python?</li><li>When should I use the <code>@Property</code> function?</li><li>How to use the <code>@property</code> function?
+In this article, you will understand what exactly the Python <code>@Property</code> does.</li></ol><ol><li>What is the Property in Python?
+In Python property is a built-in function. Property function is helping to modify class attributes and give backward compatibility. But you should have a basic concept of Python classes and method. Because of the <code>@property</code> is typically used inside one.</li><li>When should I use the <code>@Property</code> function?
+Assume, You create a class that store user bank account information like a bank account number and balance.
+Let's create the class<div class=code-block><pre tabindex=0><code>class Account:
+    &#34;&#34;&#34; A basic class that store bank account information &#34;&#34;&#34;
+
+    def __init__(self, bank_account: str, balance: float):
+        self.bank_account = bank_account
+        self.balance = balance
+        self.account_information = dict(bank_account=self.bank_account, balance=self.balance)
+
+    def __str__(self):
+        return f&#34;Bank Account: {self.bank_account} - balance: {self.balance}&#34;
+
+
+account = Account(&#34;0004-0067894712&#34;, 1000.50)
+print(f&#34;account number: {account.bank_account}&#34;)
+print(f&#34;Current balance: {account.balance}&#34;)
+print(f&#34;Account information: {account.account_information}&#34;)
+
+# Output should look like this 
+account number: 0004-0067894712
+Current balance: 1000.5
+Account information: {&#39;bank_account&#39;: &#39;0004-0067894712&#39;, &#39;balance&#39;: 1000.5}</code></pre><button class=copy-code-button>copy</button></div><p>Now, from this account we transfer the fund what will we get after calling the account_information attribute? Let&rsquo;s transfer the balance and call the account_information attribute of the instance.</p><div class=code-block><pre tabindex=0><code># Fund transfer process
+account.balance = account.balance - 500.25
+
+# Now call the account_information attribute
+print(&#34;Calling the account_information attribute&#34;)
+print(f&#34;Account information: {account.account_information}&#34;)
+# calling the balance attribute 
+print(f&#34;Current balance: {account.balance}&#34;)
+
+# Output
+Calling the account_information attribute
+Account information: {&#39;bank_account&#39;: &#39;0004-0067894712&#39;, &#39;balance&#39;: 1000.5}
+Current balance: 500.25</code></pre><button class=copy-code-button>copy</button></div><p>No change! But we transferred the balance. We expected that the balance should be 500.25. But it does not happen. Because Python does not change the account_information value.  If we call the balance attribute we will get the exact balance. I mean the Current balance is 500.25.</p><p>Assume, you are working with a team and you are the owner of this bank account module. Also, you share your bank account module with your colleagues. Let&rsquo;s your team members are working with a new module that is called Payment Gateway and they want to charge an amount from the bank account. When they call the account_information attribute. They will get the account balance is 1000.50. But we had already transferred 500.25 amount from that account. In this case, all team members are falling in trouble.</p><p>In this case, we can solve the problem by creating a new method of account class. Let&rsquo;s create the method.</p><div class=code-block><pre tabindex=0><code>class Account:
+    &#34;&#34;&#34; A basic account information store class &#34;&#34;&#34;
+
+    def __init__(self, bank_account: str, balance: float):
+        self.bank_account = bank_account
+        self.balance = balance
+        # self.account_information = dict(bank_account=self.bank_account, balance=self.balance)
+
+    def account_information(self) -&amp;gt; dict:
+        &#34;&#34;&#34;
+        Get account information
+        :return: {&#39;bank_account&#39;: &#39;0004-0067894712&#39;, &#39;balance&#39;: 1000.5}
+        :rtype: dict
+        &#34;&#34;&#34;
+        return dict(bank_account=self.bank_account, balance=self.balance)
+
+    def __str__(self):
+        return f&#34;Bank Account: {self.bank_account} - balance: {self.balance}&#34;
+
+
+account = Account(&#34;0004-0067894712&#34;, 1000.50)
+print(f&#34;account number: {account.bank_account}&#34;)
+print(f&#34;Current balance: {account.balance}&#34;)
+print(f&#34;Account information: {account.account_information()}&#34;)
+
+# Fund transfer process
+account.balance = account.balance - 500.25
+
+# Now call the account_information attribute
+print(&#34;Calling the account_information attribute&#34;)
+print(f&#34;Account information: {account.account_information()}&#34;)
+print(f&#34;Current balance: {account.balance}&#34;)
+
+#Output 
+account number: 0004-0067894712
+Current balance: 1000.5
+Account information: {&#39;bank_account&#39;: &#39;0004-0067894712&#39;, &#39;balance&#39;: 1000.5}
+Calling the account_information attribute
+Account information: {&#39;bank_account&#39;: &#39;0004-0067894712&#39;, &#39;balance&#39;: 500.25}
+Current balance: 500.25</code></pre><button class=copy-code-button>copy</button></div><p>Now we get the expected result. But Did you notice?? I commented out the account_information attribute and created a new method as the same name as the attribute. It has a backward compatibility issue. Because your teammates do not know the new method as the same name as the attribute and their codebase lines could be 1k or more than of their Payment Gateway module.</p><p>In this case,  The <code>@Property</code>  will help to solve these two types of issue. The balance amount change problem and backward compatibility.</li><li>How to use the <code>@property</code> function?
+Let&rsquo;s solve the problem in a Pythonic way.</p><div class=code-block><pre tabindex=0><code>.......
+    # Just declare the @property decorator and solve those problems.
+    @property
+    def account_information(self) -&amp;gt; dict:
+        &#34;&#34;&#34;
+        Get account information
+        :return: {&#39;bank_account&#39;: &#39;0004-0067894712&#39;, &#39;balance&#39;: 1000.5}
+        :rtype: dict
+        &#34;&#34;&#34;
+        return dict(bank_account=self.bank_account, balance=self.balance)
+.......</code></pre><button class=copy-code-button>copy</button></div><p>Both problems solved by using just <code>@property</code> decorator. But The <code>@property</code> function has more features. Such as you can set a new value, get the value, and delete the value.
+Example:</p><div class=code-block><pre tabindex=0><code>class Account:
+    &#34;&#34;&#34; A basic account information store class &#34;&#34;&#34;
+
+    def __init__(self, bank_account: str, balance: float):
+        self.bank_account = bank_account
+        self.balance = balance
+        self._account_information = dict(bank_account=self.bank_account, balance=self.balance)
+
+    # Just declare the @property decorator and solve those problems.
+    @property
+    def account_information(self):
+        &#34;&#34;&#34;
+        Get account information
+        :return: {&#39;bank_account&#39;: &#39;0004-0067894712&#39;, &#39;balance&#39;: 1000.5}
+        :rtype: dict
+        &#34;&#34;&#34;
+        return self._account_information
+
+    @account_information.setter
+    def account_information(self, kwargs):
+        &#34;&#34;&#34;
+        :param kwargs:
+        :return:
+        &#34;&#34;&#34;
+        print(&#34;set a value&#34;)
+        self._account_information = kwargs
+
+    @account_information.deleter
+    def account_information(self):
+        &#34;&#34;&#34;
+        :return:
+        &#34;&#34;&#34;
+        print(&#34;call deleter method&#34;)
+        self._account_information = dict(bank_account=None, balance=None)
+
+    def __str__(self):
+        return f&#34;Bank Account: {self.bank_account} - balance: {self.balance}&#34;
+
+
+account = Account(&#34;0004-0067894712&#34;, 1000.50)
+print(f&#34;account number: {account.bank_account}&#34;)
+print(f&#34;Current balance: {account.balance}&#34;)
+print(f&#34;Account information: {account.account_information}&#34;)
+
+# Now set a new value in the _account_information attribute
+account.account_information = {&#34;bank_account&#34;: &#34;0004-0067899870&#34;, &#34;balance&#34;: 100.50}
+
+# Output new account information
+print(f&#34;New account information: {account.account_information}&#34;)
+
+# Output for deleter method
+del account.account_information
+
+# after deleting the information should print bank_account: None and balance=None
+print(account.account_information)
+
+# Output
+account number: 0004-0067894712
+Current balance: 1000.5
+Account information: {&#39;bank_account&#39;: &#39;0004-0067894712&#39;, &#39;balance&#39;: 1000.5}
+set a value
+New account information: {&#39;bank_account&#39;: &#39;0004-0067899870&#39;, &#39;balance&#39;: 100.5}
+call deleter method
+{&#39;bank_account&#39;: None, &#39;balance&#39;: None}</code></pre><button class=copy-code-button>copy</button></div><p>Hope the purpose of <code>@Property</code> is clear and you now know when and how to use it. If you did, congratulations! I will meet you in the next one.</li></p></ol></div></article><div class=single-pagination><hr><div class=flexnowrap><div class=single-pagination-prev><div class=single-pagination-container-prev><div class=single-pagination-text>←</div><div class=single-pagination-text><a href=/posts/clock-arithmetic-or-modular-arithmetic/>Clock Arithmetic or Modular Arithmetic</a></div></div></div><div class=single-pagination-next><div class=single-pagination-container-next><div class=single-pagination-text><a href=/posts/python-symbol-is-better-than-function-call/>Python: Symbol is better than function call</a></div><div class=single-pagination-text>→</div></div></div></div><hr></div><div class=back-to-top><a href=#top>back to top</a></div></div></main></div><footer><p>Powered by
+<a href=https://gohugo.io/>Hugo</a>
+and
+<a href=https://github.com/tomfran/typo>tomfran/typo</a></p></footer></body><script src=/js/theme-switch.js></script><script defer src=/js/copy-code.js></script></html>

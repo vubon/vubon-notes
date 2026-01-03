@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PostgreSQL on Vubon Notes</title><link>https://vubon.me/categories/postgresql/</link><description>Recent content in PostgreSQL on Vubon Notes</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sat, 06 Apr 2019 10:45:31 +0000</lastBuildDate><atom:link href="https://vubon.me/categories/postgresql/index.xml" rel="self" type="application/rss+xml"/><item><title>Experiment with GIN index of PostgreSQL DB</title><link>https://vubon.me/posts/experiment-with-gin-index-of-postgresql-db/</link><pubDate>Thu, 04 Apr 2019 14:49:16 +0000</pubDate><guid>https://vubon.me/posts/experiment-with-gin-index-of-postgresql-db/</guid><description>&lt;p>PostgreSQL provides the index methods B-tree, hash, GiST, SP-GiST, GIN, and BRIN. Users can also define their own index methods, but that is fairly complicated. In this article, I will discuss the GIN index. GIN index is a very useful index method for a query, count, etc.&lt;/p>
+&lt;p>&lt;strong>Use cases GIN index:&lt;/strong>&lt;/p>
+&lt;ul>
+ 	&lt;li>Full-Text search(tsvector)&lt;/li>
+ 	&lt;li>Array Data Type&lt;/li>
+ 	&lt;li>JSONB&lt;/li>
+&lt;/ul>
+&lt;strong>What is the Gin index?&lt;/strong>
+From the &lt;a href="https://www.postgresql.org/docs/9.6/gin-intro.html">Docs&lt;/a>
+&lt;blockquote>&lt;em>"GIN stands for Generalized Inverted Index. GIN is designed for handling cases where the items to be indexed are composite values, and the queries to be handled by the index need to search for element values that appear within the composite items. For example, the items could be documents, and the queries could be searches for documents containing specific words."&lt;/em>&lt;/blockquote>
+![GIN index diagram](/images/GIN-index-1024x597.jpg)
+&lt;p>Image credit: &lt;a href="https://www.cybertec-postgresql.com">Cybertec Postgresql&lt;/a>
+&lt;strong>Create test data&lt;/strong>&lt;/p></description></item></channel></rss>

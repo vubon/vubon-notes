@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Design Principles on Vubon Notes</title><link>https://vubon.me/tags/design-principles/</link><description>Recent content in Design Principles on Vubon Notes</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sat, 03 Jan 2026 12:00:00 +0000</lastBuildDate><atom:link href="https://vubon.me/tags/design-principles/index.xml" rel="self" type="application/rss+xml"/><item><title>SOLID Principles with Python Examples</title><link>https://vubon.me/posts/solid-principles-with-python-examples/</link><pubDate>Sat, 03 Jan 2026 12:00:00 +0000</pubDate><guid>https://vubon.me/posts/solid-principles-with-python-examples/</guid><description>&lt;p>
+
+
+
+
+&lt;figure class="">
+ 
+ 
+ &lt;div class="img-container">
+ &lt;img loading="lazy" alt="SOLID Principles Diagram" src="https://vubon.me/images/solid-principles.png">
+ &lt;/div>
+ 
+
+ 
+&lt;/figure>
+&lt;/p>
+&lt;p>Let’s deep dive into SOLID principles. SOLID is a short form. It stands for&lt;/p>
+&lt;blockquote>
+&lt;ol>
+&lt;li>Single Responsibility Principle&lt;/li>
+&lt;li>Open and Closed Principle&lt;/li>
+&lt;li>Lisvok Sub situation Principle&lt;/li>
+&lt;li>Interface Segregation Principle&lt;/li>
+&lt;li>Dependency Inversion Principle&lt;/li>
+&lt;/ol>
+&lt;/blockquote>
+&lt;p>This is the meaning of the SOLID. In this article, I’m going to try to explain SOLID Principles in the simplest way so that it’s easy for beginners to understand.&lt;/p>
+&lt;p>The SOLID principles were defined in the early 2000s by &lt;a href="https://en.wikipedia.org/wiki/Robert_C._Martin">Robert C. Martin&lt;/a> (Uncle Bob). Uncle Bob elaborated some of these and identified others already existing and said that these principles should be used to get good management of dependencies in our code.&lt;/p></description></item></channel></rss>

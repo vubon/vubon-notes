@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Functions on Vubon Notes</title><link>https://vubon.me/tags/functions/</link><description>Recent content in Functions on Vubon Notes</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Wed, 12 Jun 2019 15:42:18 +0000</lastBuildDate><atom:link href="https://vubon.me/tags/functions/index.xml" rel="self" type="application/rss+xml"/><item><title>Hmm Python @Property</title><link>https://vubon.me/posts/python-property/</link><pubDate>Tue, 11 Jun 2019 23:05:03 +0000</pubDate><guid>https://vubon.me/posts/python-property/</guid><description>&lt;p>
+
+
+
+
+&lt;figure class="">
+ 
+ 
+ &lt;div class="img-container">
+ &lt;img loading="lazy" alt="Property decorator diagram" src="https://vubon.me/images/property.png">
+ &lt;/div>
+ 
+
+ 
+&lt;/figure>
+&lt;/p>
+&lt;p>Hmm. I am thinking what is that? let&amp;rsquo;s deep a dive with me. Before I start  I want to ask some questions myself.&lt;/p>
+&lt;ol>
+&lt;li>What is &lt;code>@property&lt;/code> in Python?&lt;/li>
+&lt;li>When should I use the &lt;code>@Property&lt;/code> function?&lt;/li>
+&lt;li>How to use the &lt;code>@property&lt;/code> function?
+In this article, you will understand what exactly the Python &lt;code>@Property&lt;/code> does.&lt;/li>
+&lt;/ol>
+&lt;ol>
+ 	&lt;li>What is the Property in Python?
+In Python property is a built-in function. Property function is helping to modify class attributes and give backward compatibility. But you should have a basic concept of Python classes and method. Because of the &lt;code>@property&lt;/code> is typically used inside one.&lt;/li>
+ 	&lt;li>When should I use the &lt;code>@Property&lt;/code> function?
+Assume, You create a class that store user bank account information like a bank account number and balance.
+Let's create the class
+&lt;div class="code-block">
+ &lt;pre tabindex="0">&lt;code>class Account:
+ &amp;#34;&amp;#34;&amp;#34; A basic class that store bank account information &amp;#34;&amp;#34;&amp;#34;
+
+ def __init__(self, bank_account: str, balance: float):
+ self.bank_account = bank_account
+ self.balance = balance
+ self.account_information = dict(bank_account=self.bank_account, balance=self.balance)
+
+ def __str__(self):
+ return f&amp;#34;Bank Account: {self.bank_account} - balance: {self.balance}&amp;#34;
+
+
+account = Account(&amp;#34;0004-0067894712&amp;#34;, 1000.50)
+print(f&amp;#34;account number: {account.bank_account}&amp;#34;)
+print(f&amp;#34;Current balance: {account.balance}&amp;#34;)
+print(f&amp;#34;Account information: {account.account_information}&amp;#34;)
+
+# Output should look like this 
+account number: 0004-0067894712
+Current balance: 1000.5
+Account information: {&amp;#39;bank_account&amp;#39;: &amp;#39;0004-0067894712&amp;#39;, &amp;#39;balance&amp;#39;: 1000.5}&lt;/code>&lt;/pre>
+ &lt;button class="copy-code-button">copy&lt;/button>
+&lt;/div>
+&lt;p>Now, from this account we transfer the fund what will we get after calling the account_information attribute? Let&amp;rsquo;s transfer the balance and call the account_information attribute of the instance.&lt;/p></description></item></channel></rss>
