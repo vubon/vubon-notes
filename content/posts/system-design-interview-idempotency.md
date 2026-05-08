@@ -117,3 +117,7 @@ That answer covers the real problem (retries everywhere), the layered solution, 
 
 > In payments, correctness matters more than speed. Build systems that are safe to retry and many distributed problems suddenly become simpler.
 
+---
+
+➡️ Next: [Part 2: Partial Failure & Durability](/posts/system-design-interview-partial-failure/)
+

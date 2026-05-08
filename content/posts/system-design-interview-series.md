@@ -32,6 +32,7 @@ Here's the planned lineup (I'll link each as it's published):
 | # | Topic | Key Question |
 |---|-------|-------------|
 | 1 | [**Idempotency**](/posts/system-design-interview-idempotency/) | How do you handle duplicate requests safely? |
+| 2 | [**Partial Failure & Durability**](/posts/system-design-interview-partial-failure/) | What happens if your service crashes mid-request? |
 
 ## How to use this series
 
