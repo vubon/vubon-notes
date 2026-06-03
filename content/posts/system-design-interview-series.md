@@ -33,6 +33,8 @@ Here's the planned lineup (I'll link each as it's published):
 |---|-------|-------------|
 | 1 | [**Idempotency**](/posts/system-design-interview-idempotency/) | How do you handle duplicate requests safely? |
 | 2 | [**Partial Failure & Durability**](/posts/system-design-interview-partial-failure/) | What happens if your service crashes mid-request? |
+| 3 | [**No-Op Update Pattern**](/posts/no-op-update-pattern/) | How do you make repeated update requests converge to the same state? |
+| 4 | [**Saga Pattern**](/posts/saga-pattern/) | How do you recover when one service succeeds but another fails? |
 
 ## How to use this series
 
