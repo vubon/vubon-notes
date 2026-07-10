@@ -1,7 +1,12 @@
-baseURL = 'https://vubon.me/'
+baseURL = 'https://vubon.dev/'
 languageCode = 'en-us'
 title = 'Vubon Notes'
 theme = 'typo'
+
+[taxonomies]
+  tag = 'tags'
+  category = 'categories'
+  series = 'series'
 
 [outputs]
 	home = ['HTML', 'RSS', 'SITEMAP', 'ROBOTS']
