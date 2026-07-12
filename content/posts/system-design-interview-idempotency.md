@@ -14,6 +14,11 @@ categories:
   - "System Design"
   - "Interview"
 description: "A deep dive into idempotency — what it means, why it matters in distributed systems, and how to answer it confidently in a system design interview."
+keywords:
+  - "system design"
+  - "interview prep"
+  - "idempotency"
+  - "distributed systems"
 ---
 
 Almost every candidate faces this question during a system design interview:

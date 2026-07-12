@@ -11,6 +11,11 @@ tags:
 categories:
   - "System Design"
 description: "A practical introduction to the Saga Pattern, why rollback breaks down across microservices, and how compensation keeps distributed workflows consistent."
+keywords:
+  - "Saga pattern"
+  - "distributed transactions"
+  - "microservices"
+  - "compensation"
 aliases:
   - "/saga-pattern/"
 ---

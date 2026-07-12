@@ -11,6 +11,11 @@ tags:
 categories:
   - "System Design"
 description: "A practical look at the No-Op Update Pattern and how hash comparison plus versioning can make update APIs idempotent, state-driven, and easier to reason about."
+keywords:
+  - "No-Op Update"
+  - "idempotency"
+  - "API design"
+  - "state-driven updates"
 aliases:
   - "/no-op-update-pattern/"
 ---

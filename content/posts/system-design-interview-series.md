@@ -13,6 +13,11 @@ categories:
   - "System Design"
   - "Interview"
 description: "Kicking off a series that walks through the most common system design interview topics — from idempotency to rate limiting, caching, and beyond."
+keywords:
+  - "system design"
+  - "interview prep"
+  - "software engineering"
+  - "architecture"
 ---
 
 System design interviews are tough. Not because the questions are impossible - but because they're open-ended, and most people don't know where to start.

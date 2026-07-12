@@ -1,5 +1,11 @@
 ---
 title: 'String in Python'
+description: "A foundational overview of String manipulation and operations in Python."
+keywords:
+  - "Python"
+  - "strings"
+  - "string manipulation"
+  - "Python basics"
 date: 2019-03-28 06:47:23
 lastmod: 2020-04-30 09:30:54
 draft: false

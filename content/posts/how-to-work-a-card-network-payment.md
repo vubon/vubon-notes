@@ -1,5 +1,12 @@
 ---
 title: 'How To Work A Card Network - Payment'
+description: "Behind the scenes of digital payments: How transactions flow through acquiring banks, card networks, and issuing banks."
+keywords:
+  - "Card network"
+  - "payment processing"
+  - "Visa"
+  - "Mastercard"
+  - "payment gateway"
 date: 2023-03-02 06:53:33
 lastmod: 2023-03-02 06:54:13
 draft: false

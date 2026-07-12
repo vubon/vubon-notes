@@ -1,5 +1,12 @@
 ---
 title: "A Deep Dive into Model Context Protocol (MCP)"
+description: "A deep dive into the Model Context Protocol (MCP) by Anthropic. Learn how it acts as a universal bridge connecting AI assistants to databases, enterprise tools, and payment gateways."
+keywords:
+  - "MCP"
+  - "Model Context Protocol"
+  - "AI"
+  - "Anthropic"
+  - "JSON-RPC"
 date: 2026-07-12T13:30:00+07:00
 draft: false
 tags:

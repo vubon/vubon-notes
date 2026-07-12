@@ -1,5 +1,12 @@
 ---
 title: 'Fan-Out Fan-In in Golang — The easy way'
+description: "Mastering Go concurrency: A practical guide to implementing the Fan-Out Fan-In pattern using goroutines and channels."
+keywords:
+  - "Golang"
+  - "Go concurrency"
+  - "Fan-out Fan-in pattern"
+  - "goroutines"
+  - "channels"
 date: 2026-01-01
 lastmod: 2026-01-01
 draft: false

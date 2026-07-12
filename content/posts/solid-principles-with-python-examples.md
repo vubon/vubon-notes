@@ -1,5 +1,11 @@
 ---
 title: "SOLID Principles with Python Examples"
+description: "Understand the five SOLID principles of object-oriented design, explained with clear, practical Python code examples."
+keywords:
+  - "SOLID principles"
+  - "Python"
+  - "Object-Oriented Programming"
+  - "software design"
 date: 2026-01-03T12:00:00Z
 draft: false
 tags:

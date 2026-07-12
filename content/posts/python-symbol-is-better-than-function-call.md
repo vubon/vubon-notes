@@ -1,5 +1,12 @@
 ---
 title: 'Python: Symbol is better than function call'
+description: "Exploring Python performance: Why referencing symbols can sometimes be a better optimization strategy than excessive function calls."
+keywords:
+  - "Python"
+  - "symbol"
+  - "performance"
+  - "optimization"
+  - "function call"
 date: 2019-09-15 21:24:56
 lastmod: 2021-12-14 00:46:16
 draft: false

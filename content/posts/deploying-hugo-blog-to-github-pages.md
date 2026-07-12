@@ -1,5 +1,11 @@
 ---
 title: 'How to Deploy Your Hugo Blog to GitHub Pages'
+description: "A step-by-step tutorial on how to build, deploy, and host your Hugo static site for free using GitHub Pages."
+keywords:
+  - "Hugo"
+  - "GitHub Pages"
+  - "Static site generator"
+  - "deployment tutorial"
 date: 2025-12-31 06:45:00
 lastmod: 2025-12-31 06:45:00
 draft: false
@@ -77,6 +83,12 @@ This creates a new markdown file at `content/posts/my-first-post.md`. Open it an
 ```markdown
 ---
 title: 'My First Post'
+description: "A step-by-step tutorial on how to build, deploy, and host your Hugo static site for free using GitHub Pages."
+keywords:
+  - "Hugo"
+  - "GitHub Pages"
+  - "Static site generator"
+  - "deployment tutorial"
 date: 2025-12-31T10:00:00Z
 draft: true
 ---
@@ -89,6 +101,12 @@ Now add some content below the front matter:
 ```markdown
 ---
 title: 'My First Post'
+description: "A step-by-step tutorial on how to build, deploy, and host your Hugo static site for free using GitHub Pages."
+keywords:
+  - "Hugo"
+  - "GitHub Pages"
+  - "Static site generator"
+  - "deployment tutorial"
 date: 2025-12-31T10:00:00Z
 draft: false
 tags:
@@ -126,6 +144,12 @@ Add some content:
 ```markdown
 ---
 title: 'Home'
+description: "A step-by-step tutorial on how to build, deploy, and host your Hugo static site for free using GitHub Pages."
+keywords:
+  - "Hugo"
+  - "GitHub Pages"
+  - "Static site generator"
+  - "deployment tutorial"
 ---
 
 Welcome to my blog! I write about technology, coding, and whatever else interests me.

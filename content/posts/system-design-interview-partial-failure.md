@@ -14,6 +14,12 @@ categories:
   - "System Design"
   - "Interview"
 description: "What happens when your service crashes mid-request? A look at partial failure, ACID transactions, and database durability in payment systems."
+keywords:
+  - "system design"
+  - "partial failure"
+  - "durability"
+  - "ACID"
+  - "distributed systems"
 ---
 
 After talking about idempotency, I thought I'd share another good follow-up question:

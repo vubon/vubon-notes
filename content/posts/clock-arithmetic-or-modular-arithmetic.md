@@ -1,5 +1,11 @@
 ---
 title: 'Clock Arithmetic or Modular Arithmetic'
+description: "An introduction to modular arithmetic, often called clock arithmetic, and its applications in computer science."
+keywords:
+  - "Clock arithmetic"
+  - "modular arithmetic"
+  - "mathematics"
+  - "modulo operator"
 date: 2019-05-22 00:29:56
 lastmod: 2020-05-06 20:51:37
 draft: false

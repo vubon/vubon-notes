@@ -1,5 +1,11 @@
 ---
 title: 'Experiment with GIN index of PostgreSQL DB'
+description: "Exploring PostgreSQL performance optimizations by experimenting with GIN (Generalized Inverted Index) indexing for advanced search and JSONB data."
+keywords:
+  - "PostgreSQL"
+  - "GIN index"
+  - "database optimization"
+  - "JSONB indexing"
 date: 2019-04-04 14:49:16
 lastmod: 2019-04-06 10:45:31
 draft: false
