@@ -1,8 +1,16 @@
 ---
 title: "Introducing Kolom: A Native Bengali Keyboard for macOS"
+description: "Discover Kolom, a free, open-source, native Bengali phonetic keyboard for macOS (Apple Silicon). Learn how Kolom brings fast and private Bengali typing to Mac."
+keywords:
+  - "Kolom"
+  - "kolom"
+  - "kolom keyboard"
+  - "Bengali keyboard macOS"
+  - "Mac Bengali typing"
 date: 2026-07-08T13:30:00Z
 draft: false
 tags:
+  - "Kolom"
   - "macOS"
   - "Swift"
   - "Open Source"
