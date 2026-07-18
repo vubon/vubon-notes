@@ -1,6 +1,6 @@
 ---
 title: 'Hmm Python @Property'
-description: "Demystifying Python\'s @property decorator. Learn how to create managed attributes, getters, and setters elegantly."
+description: "Demystifying Python's @property decorator. Learn how to create managed attributes, getters, and setters elegantly."
 keywords:
   - "Python"
   - "@property decorator"

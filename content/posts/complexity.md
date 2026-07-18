@@ -1,6 +1,6 @@
 ---
 title: 'Complexity'
-description: "A beginner\'s look into algorithmic complexity and understanding Big O notation."
+description: "A beginner's look into algorithmic complexity and understanding Big O notation."
 keywords:
   - "complexity"
   - "time complexity"
