@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>API Design on Vubon Notes</title><link>https://vubon.dev/tags/api-design/</link><description>Recent content in API Design on Vubon Notes</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sun, 24 May 2026 11:00:00 +0000</lastBuildDate><atom:link href="https://vubon.dev/tags/api-design/index.xml" rel="self" type="application/rss+xml"/><item><title>No-Op Update Pattern: State-Driven Idempotent Updates</title><link>https://vubon.dev/posts/no-op-update-pattern/</link><pubDate>Sun, 24 May 2026 11:00:00 +0000</pubDate><guid>https://vubon.dev/posts/no-op-update-pattern/</guid><description>&lt;p>After exploring &lt;a href="https://vubon.dev/posts/system-design-interview-idempotency/">idempotency keys&lt;/a>, I came across another pattern that deserves more attention: the &lt;strong>No-Op Update Pattern&lt;/strong>.&lt;/p>
+&lt;p>The idea is simple, but the mindset behind it is what makes it powerful.&lt;/p>
+&lt;p>Instead of treating every update request as something that must trigger work, you first ask a more important question:&lt;/p>
+&lt;p>&lt;strong>Does this request actually change the state?&lt;/strong>&lt;/p>
+&lt;p>If the answer is no, the system should do nothing and return the current state.&lt;/p></description></item><item><title>System Design Interview: Idempotency</title><link>https://vubon.dev/posts/system-design-interview-idempotency/</link><pubDate>Mon, 04 May 2026 11:00:00 +0000</pubDate><guid>https://vubon.dev/posts/system-design-interview-idempotency/</guid><description>&lt;p>Almost every candidate faces this question during a system design interview:&lt;/p>
+&lt;p>&lt;strong>How do you handle duplicate transactions?&lt;/strong>&lt;/p>
+&lt;p>Most people answer: &lt;em>Idempotency key + Cache.&lt;/em>&lt;/p>
+&lt;p>To be honest — that&amp;rsquo;s a good start.&lt;/p>
+&lt;p>But the real lesson comes when you build an actual payment system.&lt;/p>
+&lt;hr>
+&lt;h2 class="heading" id="duplicates-are-normal-behavior">
+ Duplicates are normal behavior
+ &lt;a class="anchor" href="#duplicates-are-normal-behavior">#&lt;/a>
+&lt;/h2>
+&lt;p>In distributed systems, duplicates are not edge cases. They are normal behavior.&lt;/p>
+&lt;p>Duplicates can originate from anywhere:&lt;/p>
+&lt;ul>
+&lt;li>client double-clicks&lt;/li>
+&lt;li>mobile retry on timeout&lt;/li>
+&lt;li>API gateway retries&lt;/li>
+&lt;li>reverse proxies&lt;/li>
+&lt;li>silent network failures&lt;/li>
+&lt;li>third-party timeouts&lt;/li>
+&lt;/ul>
+&lt;p>So the problem is not &lt;em>if&lt;/em> duplicates happen.&lt;/p></description></item></channel></rss>

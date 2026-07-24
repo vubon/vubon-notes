@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>System Design Interview Prep on Vubon Notes</title><link>https://vubon.dev/series/system-design-interview-prep/</link><description>Recent content in System Design Interview Prep on Vubon Notes</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 08 May 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://vubon.dev/series/system-design-interview-prep/index.xml" rel="self" type="application/rss+xml"/><item><title>System Design Interview: Partial Failure &amp; Durability</title><link>https://vubon.dev/posts/system-design-interview-partial-failure/</link><pubDate>Fri, 08 May 2026 00:00:00 +0000</pubDate><guid>https://vubon.dev/posts/system-design-interview-partial-failure/</guid><description>&lt;p>After talking about idempotency, I thought I&amp;rsquo;d share another good follow-up question:&lt;/p>
+&lt;p>&lt;strong>&amp;ldquo;What happens if your service crashes in the middle of a request?&amp;rdquo;&lt;/strong>&lt;/p>
+&lt;p>Let&amp;rsquo;s say:&lt;/p>
+&lt;ul>
+&lt;li>transfer record inserted ✅&lt;/li>
+&lt;li>ledger update started ❌&lt;/li>
+&lt;li>database connection drops&lt;/li>
+&lt;li>service dies&lt;/li>
+&lt;/ul>
+&lt;p>Now you have partial data.&lt;/p>
+&lt;p>And in payment systems, partial success is usually worse than failure.&lt;/p>
+&lt;p>
+
+
+
+
+&lt;figure class="">
+ 
+ 
+ &lt;div class="img-container">
+ &lt;img loading="lazy" alt="What if your service crashes in the middle of a request?" src="https://vubon.dev/images/partial-failure-durability.png">
+ &lt;/div>
+ 
+
+ 
+&lt;/figure>
+&lt;/p>
+&lt;hr>
+&lt;h2 class="heading" id="the-first-answer-most-people-give">
+ The first answer most people give
+ &lt;a class="anchor" href="#the-first-answer-most-people-give">#&lt;/a>
+&lt;/h2>
+&lt;p>👉 &lt;em>Use database transactions (ACID).&lt;/em>&lt;/p></description></item><item><title>System Design Interview: Idempotency</title><link>https://vubon.dev/posts/system-design-interview-idempotency/</link><pubDate>Mon, 04 May 2026 11:00:00 +0000</pubDate><guid>https://vubon.dev/posts/system-design-interview-idempotency/</guid><description>&lt;p>Almost every candidate faces this question during a system design interview:&lt;/p>
+&lt;p>&lt;strong>How do you handle duplicate transactions?&lt;/strong>&lt;/p>
+&lt;p>Most people answer: &lt;em>Idempotency key + Cache.&lt;/em>&lt;/p>
+&lt;p>To be honest — that&amp;rsquo;s a good start.&lt;/p>
+&lt;p>But the real lesson comes when you build an actual payment system.&lt;/p>
+&lt;hr>
+&lt;h2 class="heading" id="duplicates-are-normal-behavior">
+ Duplicates are normal behavior
+ &lt;a class="anchor" href="#duplicates-are-normal-behavior">#&lt;/a>
+&lt;/h2>
+&lt;p>In distributed systems, duplicates are not edge cases. They are normal behavior.&lt;/p>
+&lt;p>Duplicates can originate from anywhere:&lt;/p>
+&lt;ul>
+&lt;li>client double-clicks&lt;/li>
+&lt;li>mobile retry on timeout&lt;/li>
+&lt;li>API gateway retries&lt;/li>
+&lt;li>reverse proxies&lt;/li>
+&lt;li>silent network failures&lt;/li>
+&lt;li>third-party timeouts&lt;/li>
+&lt;/ul>
+&lt;p>So the problem is not &lt;em>if&lt;/em> duplicates happen.&lt;/p></description></item><item><title>System Design Interview Prep — Series Introduction</title><link>https://vubon.dev/posts/system-design-interview-series/</link><pubDate>Mon, 04 May 2026 10:00:00 +0000</pubDate><guid>https://vubon.dev/posts/system-design-interview-series/</guid><description>&lt;p>System design interviews are tough. Not because the questions are impossible - but because they&amp;rsquo;re open-ended, and most people don&amp;rsquo;t know where to start.&lt;/p>
+&lt;p>After years of building distributed systems in FinTech, I&amp;rsquo;ve been on both sides of the table. I know what interviewers are actually looking for, and it&amp;rsquo;s not buzzwords. It&amp;rsquo;s trade-offs, real-world thinking, and knowing &lt;em>why&lt;/em> something works, not just &lt;em>that&lt;/em> it works.&lt;/p>
+&lt;p>So I&amp;rsquo;m putting together this series — practical write-ups on the topics that come up again and again. No fluff, just the stuff that matters.&lt;/p></description></item></channel></rss>
