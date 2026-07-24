@@ -248,4 +248,4 @@ If you are using this in an application (like refunding a Stripe payment to prev
 | **Best Use Case** | Long-running background workers, cron jobs, DB migrations. | Rapid API requests, user checkouts, 3rd-party API calls. |
 | **TPS Impact** | Blocks the entire connection; throughput limited by max connections. | Only blocks during the transaction window. |
 
-In **Part 2** of this series, we will explore what happens when these frozen database connections crash into an application's connection pool, and how to safely mitigate pool starvation using **Go** and **GORM**.
+In [**Part 2** of this series]({{< ref "postgres-connections-and-locks-part-2.md" >}}), we will explore what happens when these frozen database connections crash into an application's connection pool, and how to safely mitigate pool starvation using **Go** and **GORM**.
