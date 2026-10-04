@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pattern on Vubon Notes</title><link>https://vubon.dev/tags/pattern/</link><description>Recent content in Pattern on Vubon Notes</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Wed, 03 Jun 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://vubon.dev/tags/pattern/index.xml" rel="self" type="application/rss+xml"/><item><title>Saga Pattern: Handling Distributed Transactions in Microservices</title><link>https://vubon.dev/posts/saga-pattern/</link><pubDate>Wed, 03 Jun 2026 00:00:00 +0000</pubDate><guid>https://vubon.dev/posts/saga-pattern/</guid><description>&lt;p>Whenever microservices enter a system design discussion, one question always comes to my mind:&lt;/p>
+&lt;p>&lt;strong>What happens when a transaction succeeds in one service but fails in another?&lt;/strong>&lt;/p>
+&lt;p>Let&amp;rsquo;s take a payment system as an example.&lt;/p>
+&lt;p>Imagine a user initiates a $100 transfer. The workflow looks like this:&lt;/p>
+&lt;ul>
+&lt;li>Transfer Service creates the transaction ✅&lt;/li>
+&lt;li>Wallet Service deducts $100 from the user&amp;rsquo;s balance ✅&lt;/li>
+&lt;li>Bank Service sends the transfer request ❌&lt;/li>
+&lt;/ul>
+&lt;p>Now we have a problem.&lt;/p></description></item><item><title>No-Op Update Pattern: State-Driven Idempotent Updates</title><link>https://vubon.dev/posts/no-op-update-pattern/</link><pubDate>Sun, 24 May 2026 11:00:00 +0000</pubDate><guid>https://vubon.dev/posts/no-op-update-pattern/</guid><description>&lt;p>After exploring &lt;a href="https://vubon.dev/posts/system-design-interview-idempotency/">idempotency keys&lt;/a>, I came across another pattern that deserves more attention: the &lt;strong>No-Op Update Pattern&lt;/strong>.&lt;/p>
+&lt;p>The idea is simple, but the mindset behind it is what makes it powerful.&lt;/p>
+&lt;p>Instead of treating every update request as something that must trigger work, you first ask a more important question:&lt;/p>
+&lt;p>&lt;strong>Does this request actually change the state?&lt;/strong>&lt;/p>
+&lt;p>If the answer is no, the system should do nothing and return the current state.&lt;/p></description></item></channel></rss>
